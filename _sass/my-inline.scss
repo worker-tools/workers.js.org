@@ -1,0 +1,17 @@
+/* Dark sidebar text: Merge into Hydejack */
+.sidebar {
+  color: rgba(51, 51, 51, 0.75);
+}
+.sidebar h1, .sidebar a {
+  color: #333;
+}
+
+.sidebar a, .sidebar-about > a.sidebar-title::after {
+  text-decoration-color: rgba(51, 51, 51, 0.2);
+  border-bottom-color: rgba(51,51,51,0.2);
+}
+
+.sidebar a:hover, .sidebar-about > a.sidebar-title:hover::after {
+  text-decoration-color: #333;
+  border-bottom-color: #333;
+}
