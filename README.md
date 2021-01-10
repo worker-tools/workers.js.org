@@ -59,8 +59,6 @@ In some cases, backends are reduced to storing credentials for 3rd party APIs.
 Having a fully-fledged NodeJS environment with native dependencies, FFI, etc. becomes increasingly unnecessary.
 {:.mb2}
 
-<!-- Over the past 2 decades, this model has changed significantly. Functionality that used to be part of the monolith, has been migrated into microservices (if company-internal), or 3rd party APIs (if shared between many companies). -->
-
 <picture style="display:block;text-align:center">
   <source srcset="assets/img/2_d.svg" media="(prefers-color-scheme:dark)">
   <img src="assets/img/2_l.svg" alt="1" style="max-width:34rem">
@@ -68,6 +66,8 @@ Having a fully-fledged NodeJS environment with native dependencies, FFI, etc. be
 
 Figure 2: The model for the next decade: Edge Workers sit between Service Workers and 3rd Party APIs.   
 {:.figcaption}
+
+<!-- Over the past 2 decades, this model has changed significantly. Functionality that used to be part of the monolith, has been migrated into microservices (if company-internal), or 3rd party APIs (if shared between many companies). -->
 
 Taking this model to it's logical conclusion, backends shrink to the size of API brokers. Scriptable Worker Environments are more than capable of playing that role.
 
@@ -184,8 +184,9 @@ These are useful APIs provided by one or more Worker Environment that aren't on 
 
 
 ### Frameworks
-No HTTP Server is complete without a Web Framework for common tasks such as routing, sessions, authentication, and more. _Worker Environments do not have a complete package yet._ 
+No HTTP Server is complete without a Web Framework for common tasks such as routing, sessions, authentication, and more. 
 
+Worker Environments do not have a complete framework yet.
 However, over at **[worker-utils.github.io](https://worker-utils.github.io)** we're building the libraries and tools necessary for the first generation of Worker-based web frameworks.
 
 ## Contributing
@@ -241,13 +242,6 @@ h2 + p > clap-button[url^="#"] {
 
 .larger { font-size: larger; }
 .smaller { font-size: smaller; }
-
-/* #app-button {
-  width:10rem;
-  height:10rem;
-  margin: 5rem auto;
-  font-size: 1.5rem;
-} */
 
 .layout-welcome { padding-top: 4rem; }
 #_navbar { transform: translateY(-5rem); }
