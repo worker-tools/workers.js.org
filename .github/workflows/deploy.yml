@@ -1,0 +1,17 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - uses: actions/checkout@v2
+      - uses: helaili/jekyll-action
+        env:
+          BUNDLE_GITHUB__COM: x-access-token:${{ secrets.GH_REPO_PAT }}
+          JEKYLL_PAT: ${{ secrets.GH_REPO_PAT }}
