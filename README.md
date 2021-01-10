@@ -4,8 +4,10 @@ layout: welcome
 
 # Worker Environments
 
-![Logo](assets/img/logo_d.svg){:.app-button.dm-only style="height:10rem;margin:5rem calc(50% - 5rem)"}
-![Logo](assets/img/logo_l.svg){:.app-button.lm-only style="height:10rem;margin:5rem calc(50% - 5rem)"}
+<picture class="app-button" style="display:block;text-align:center">
+  <source srcset="assets/img/logo_d.svg" media="(prefers-color-scheme: dark)">
+  <img src="assets/img/logo_l.svg" alt="Logo" style="height:10rem;width:10rem; margin:5rem 0">
+</picture>
 
 Worker Environments are the new standard for writing HTTP servers in JavaScript.
 {:.lead.centered style="max-width:560px;margin-left:auto;margin-right:auto"}
@@ -15,7 +17,6 @@ Worker Environments are the new standard for writing HTTP servers in JavaScript.
 {:.centered.mt2.mb4}
 
 ***
-{:style="margin:5rem 0"}
 
 * Table of Contents
 {:toc .large-only}
@@ -46,12 +47,12 @@ This is good news for Frontend Developers in particular: The knowledge ac- and r
 
 Worker Environments are en extension of the API Economy: As more functionality moves into 3rd party providers sitting behind HTTP APIs, backends themselves become smaller. 
 
-![1](assets/img/1_l.svg){:.lm-only style="max-width:34rem"}
-![1](assets/img/1_d.svg){:.dm-only style="max-width:34rem"}
-{:.centered}
+<picture class="centered" style="display:block;text-align:center">
+  <source srcset="assets/img/1_d.svg" media="(prefers-color-scheme:dark)">
+  <img src="assets/img/1_l.svg" alt="1" style="max-width:34rem">
+</picture>
 
 Figure 1: How web services used to be written.  
-<!-- Specialization required for Monolith and Database programming. -->
 {:.figcaption}
 
 In some cases, backends are reduced to storing credentials for 3rd party APIs. 
@@ -60,19 +61,17 @@ Having a fully-fledged NodeJS environment with native dependencies, FFI, etc. be
 
 <!-- Over the past 2 decades, this model has changed significantly. Functionality that used to be part of the monolith, has been migrated into microservices (if company-internal), or 3rd party APIs (if shared between many companies). -->
 
-![2](assets/img/2_l.svg){:.lm-only style="max-width:34rem"}
-![2](assets/img/2_d.svg){:.dm-only style="max-width:34rem"}
-{:.centered}
+<picture class="centered" style="display:block;text-align:center">
+  <source srcset="assets/img/2_d.svg" media="(prefers-color-scheme:dark)">
+  <img src="assets/img/2_l.svg" alt="1" style="max-width:34rem">
+</picture>
 
 Figure 2: The model for the next decade: Edge Workers sit between Service Workers and 3rd Party APIs.   
-<!-- Specialization required within 3rd party providers. -->
 {:.figcaption}
 
 Taking this model to it's logical conclusion, backends shrink to the size of API brokers. Scriptable Worker Environments are more than capable of playing that role.
 
 ***
-{:style="margin: 4rem 0"}
-
 
 ## State of Worker Environments
 
@@ -202,6 +201,7 @@ Are you aware of any other Worker Environments available or in development? Did 
 
 [^1]: Node and the browser have diverged due to a lack of browser APIs for many crucial components, including HTTP, streams, file access, and more more. A lot has changed since then. Standards have been written for all of these and more, often informed by the experience of using the node-equivalent.
 
+
 <style>
 .page > p { position: relative }
 .page > header > h1 + .hr { 
@@ -213,6 +213,7 @@ Are you aware of any other Worker Environments available or in development? Did 
 
 h1, h2, h3, .h1, .h2, .h3 { margin-top: 4rem }
 h4, h5, h6, .h4, .h5, .h6 { margin-top: 3rem }
+hr { margin: 5rem 0 }
 
 clap-button {
   --clap-button-color: var(--accent-color);
@@ -263,13 +264,6 @@ h2 + p > clap-button[url^="#"] {
 .btn-primary:hover { color: #333; }
 
 table.stretch-table { margin: 2rem -1rem!important; width:calc(100% + 2rem)!important; }
-
-@media (prefers-color-scheme: dark) { .lm-only { display: none!important } }
-@media (prefers-color-scheme: light) { .dm-only { display: none!important } }
-.dark-mode .lm-only { display: none!important }
-.dark-mode .dm-only { display: unset!important }
-.light-mode .dm-only { display: none!important }
-.light-mode .lm-only { display: unset!important }
 
 </style>
 <script>
