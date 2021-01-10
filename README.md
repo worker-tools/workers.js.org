@@ -47,7 +47,7 @@ This is good news for Frontend Developers in particular: The knowledge ac- and r
 
 Worker Environments are en extension of the API Economy: As more functionality moves into 3rd party providers sitting behind HTTP APIs, backends themselves become smaller. 
 
-<picture class="centered" style="display:block;text-align:center">
+<picture style="display:block;text-align:center">
   <source srcset="assets/img/1_d.svg" media="(prefers-color-scheme:dark)">
   <img src="assets/img/1_l.svg" alt="1" style="max-width:34rem">
 </picture>
@@ -61,7 +61,7 @@ Having a fully-fledged NodeJS environment with native dependencies, FFI, etc. be
 
 <!-- Over the past 2 decades, this model has changed significantly. Functionality that used to be part of the monolith, has been migrated into microservices (if company-internal), or 3rd party APIs (if shared between many companies). -->
 
-<picture class="centered" style="display:block;text-align:center">
+<picture style="display:block;text-align:center">
   <source srcset="assets/img/2_d.svg" media="(prefers-color-scheme:dark)">
   <img src="assets/img/2_l.svg" alt="1" style="max-width:34rem">
 </picture>
