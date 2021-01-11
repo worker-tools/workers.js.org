@@ -1,8 +1,6 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 4.1"
-gem 'wdm' if Gem.win_platform?
-gem "tzinfo-data" if Gem.win_platform?
 
 group :jekyll_plugins do
   gem "jekyll-default-layout"
@@ -25,3 +23,6 @@ if ENV['JEKYLL_ENV'] == 'development'
 else
   gem "jekyll-theme-hydejack", git: "https://github.com/hydecorp/hydejack-dev", tag: "pro/v9.1.0-hysenberg.1"
 end
+
+gem 'wdm' if Gem.win_platform?
+gem "tzinfo-data" if Gem.win_platform?
