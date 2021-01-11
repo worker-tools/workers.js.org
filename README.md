@@ -65,7 +65,7 @@ Figure 2: The model for the next decade: Edge Workers sit between Service Worker
 
 <!-- Over the past 2 decades, this model has changed significantly. Functionality that used to be part of the monolith, has been migrated into microservices (if company-internal), or 3rd party APIs (if shared between many companies). -->
 
-Taking this model to it's logical conclusion, backends shrink to the size of API brokers. Scriptable Worker Environments are more than capable of playing that role.
+Taking this model to its logical conclusion, backends shrink to the size of API brokers. Scriptable Worker Environments are more than capable of playing that role.
 
 ***
 
