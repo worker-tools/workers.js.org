@@ -20,8 +20,8 @@ group :jekyll_plugins do
   gem "jekyll-compose"
 end
 
-if ENV['JEKYLL_ENV'] == 'production'
-  gem "jekyll-theme-hydejack", git: "https://github.com/hydecorp/hydejack-dev", tag: "pro/v9.1.0-hysenberg.1"
-else
+if ENV['JEKYLL_ENV'] == 'development'
   gem "jekyll-theme-hydejack", path: "~/GitHub/hydecorp/hydejack-site/#jekyll-theme-hydejack"
+else
+  gem "jekyll-theme-hydejack", git: "https://github.com/hydecorp/hydejack-dev", tag: "pro/v9.1.0-hysenberg.1"
 end
