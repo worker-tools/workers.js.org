@@ -183,7 +183,7 @@ These are useful APIs provided by one or more Worker Environment that aren't on 
 No HTTP Server is complete without a Web Framework for common tasks such as routing, sessions, authentication, and more. 
 
 Worker Environments do not have a complete framework yet.
-However, over at **[worker-tools.github.io](https://worker-tools.github.io)** we're building the libraries and tools necessary for the first generation of Worker-based web frameworks.
+However, over at [**worker-tools.github.io**](https://worker-tools.github.io){:.external} we're building the libraries and tools necessary for the first generation of Worker-based web frameworks.
 
 ## Contributing
 
