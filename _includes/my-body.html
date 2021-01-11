@@ -3,7 +3,7 @@
   if (appButton.length) document.querySelector('.page > header').prepend(...appButton);
   document.getElementById('_pushState').addEventListener('ready', function (e) {
     var main = e.detail.replaceEls[0];
-    appButton = document.querySelectorAll('.app-button');
+    var appButton = main.querySelectorAll('.app-button');
     if (appButton.length) main.querySelector('.page > header').prepend(...appButton);
   });
 

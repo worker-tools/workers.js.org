@@ -211,7 +211,7 @@ Are you aware of any other Worker Environments available or in development? Did 
 
 h1, h2, h3, .h1, .h2, .h3 { margin-top: 4rem }
 h4, h5, h6, .h4, .h5, .h6 { margin-top: 3rem }
-hr { margin: 5rem 0 }
+.page > hr { margin: 4rem 0 }
 
 clap-button {
   --clap-button-color: var(--accent-color);
