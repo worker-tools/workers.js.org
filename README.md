@@ -140,9 +140,9 @@ The APIs below are either abandoned or do not have buy-in from major browser ven
 {:.stretch-table}
 
 [w1]: https://github.com/GoogleChromeLabs/kv-storage-polyfill
-[w2]: https://github.com/worker-utils/cloudflare-kv-storage
+[w2]: https://github.com/worker-tools/cloudflare-kv-storage
 [w3]: https://caniuse.com/mdn-api_cookiestore
-[w4]: https://github.com/worker-utils/request-cookie-store
+[w4]: https://github.com/worker-tools/request-cookie-store
 [w5]: https://github.com/denoland/deno/issues/1923
 
 
@@ -183,7 +183,7 @@ These are useful APIs provided by one or more Worker Environment that aren't on 
 No HTTP Server is complete without a Web Framework for common tasks such as routing, sessions, authentication, and more. 
 
 Worker Environments do not have a complete framework yet.
-However, over at **[worker-utils.github.io](https://worker-utils.github.io)** we're building the libraries and tools necessary for the first generation of Worker-based web frameworks.
+However, over at **[worker-tools.github.io](https://worker-tools.github.io)** we're building the libraries and tools necessary for the first generation of Worker-based web frameworks.
 
 ## Contributing
 

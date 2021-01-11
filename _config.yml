@@ -18,7 +18,7 @@ author:
   name:                Florian Klampfer
   email:               mail@qwtel.com
   social:
-    github:            https://github.com/worker-utils/workers.js.org
+    github:            https://github.com/worker-tools/workers.js.org
 
 # menu:
 #   - title:             State Of
@@ -96,7 +96,7 @@ kramdown:
 hydejack:
   post_addons:         [about, newsletter, related, random, comments]
   project_addons:      [about, newsletter, other, comments]
-  no_mark_external:    true
+  no_mark_external:    false
   no_push_state:       false
   no_drawer:           false
   no_navbar:           false
@@ -154,6 +154,7 @@ readme_index:
   remove_originals:    true
   with_frontmatter:    true
 relative_links:
+  enabled:             false
   collections:         true
 titles_from_headings:
   strip_title:         true
