@@ -146,6 +146,10 @@ defaults:
   #     accent_image:
   #       background:    rgb(32,32,32)
   #       overlay:       false
+  - scope:
+      path:            README
+    values:
+      layout:          welcome
 
   # Don't include documents in assets in the sitemap
   - scope:
@@ -217,7 +221,7 @@ hydejack:
   project_addons:      [about, newsletter, other, comments]
 
   # Set to `true` if you don't want to show an icon indicating external links
-  no_mark_external:    false
+  no_mark_external:    true
 
   # Set to `true` if third party plugins fail to work with dynamically loaded pages
   no_push_state:       false
