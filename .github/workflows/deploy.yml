@@ -11,7 +11,9 @@ jobs:
     name: Deploy
     steps:
       - uses: actions/checkout@v2
-      - uses: helaili/jekyll-action
+      - uses: helaili/jekyll-action@v2
         env:
           BUNDLE_GITHUB__COM: x-access-token:${{ secrets.GH_REPO_PAT }}
           JEKYLL_PAT: ${{ secrets.GH_REPO_PAT }}
+        with:
+          target_branch: gh-pages
