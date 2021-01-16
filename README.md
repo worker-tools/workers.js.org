@@ -1,8 +1,8 @@
 # Worker Environments
 
-<picture class="app-button" style="display:block;text-align:center">
+<picture class="app-button" style="display:block; text-align:center">
   <source srcset="assets/img/logo_d.svg" media="(prefers-color-scheme: dark)">
-  <img src="assets/img/logo_l.svg" alt="Logo" style="height:10rem;width:10rem; margin:5rem 0">
+  <img src="assets/img/logo_l.svg" alt="Logo" style="height:10rem; width:10rem; margin:5rem 0" width="172" height="172">
 </picture>
 
 Worker Environments are the new standard for writing HTTP servers in JavaScript.
