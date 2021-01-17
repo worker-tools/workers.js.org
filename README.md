@@ -19,8 +19,6 @@ buttons: >
 
 ## Origin
 
-<p><clap-button url="#origin" text-placement="bottom" nowave></clap-button></p>
-
 Worker Environments are a **derivation of the [Server Workers API][1]**, which is a browser standard for offline web applications. To give developers more freedom over offline experiences, the specification includes a (minimal) HTTP server API. 
 <!-- These are known as *Service Workers*. -->
 
@@ -29,16 +27,12 @@ Since it was published, **other vendors have adopted this API** for HTTP servers
 
 ## Frontend for Backend
 
-<p><clap-button url="#frontend-for-backend" text-placement="bottom" nowave></clap-button></p>
-
 Worker Environments fulfill the original promise of NodeJS: To use one language and share code between client and server. In practice, this never came to be. Instead the worlds of node and browsers have diverged[^1]. Worker Environments are bringing them back together.  
 
 This is good news for Frontend Developers in particular: The knowledge ac- and re-quired for building offline web applications can now be applied to writing HTTP servers --- and vice-versa.
 
 
 ## The API Economy
-
-<p><clap-button url="#the-api-economy" text-placement="bottom" nowave></clap-button></p>
 
 Worker Environments are en extension of the API Economy: As more functionality moves into 3rd party providers sitting behind HTTP APIs, backends themselves become smaller. 
 
@@ -69,8 +63,6 @@ Taking this model to its logical conclusion, backends shrink to the size of API 
 ***
 
 ## State of Worker Environments
-
-<p><clap-button url="#state-of-worker-environments" text-placement="bottom" nowave></clap-button></p>
 
 <!-- Are We Worker Environment Yet? -->
 
@@ -186,8 +178,6 @@ Worker Environments do not have a complete framework yet.
 However, over at [**worker-tools.github.io**](https://worker-tools.github.io){:.external} we're building the libraries and tools necessary for the first generation of Worker-based web frameworks.
 
 ## Contributing
-
-<p><clap-button url="#contributing" text-placement="bottom" nowave></clap-button></p>
 
 Are you aware of any other Worker Environments available or in development? Did you find any inaccuracies in the tables above? Open a PR!
 

@@ -1,10 +1,14 @@
 <script>
-  var appButton = document.querySelectorAll('.app-button');
-  if (appButton.length) document.querySelector('.page > header').prepend(...appButton);
-  document.getElementById('_pushState').addEventListener('ready', function (e) {
-    var main = e.detail.replaceEls[0];
-    var appButton = main.querySelectorAll('.app-button');
-    if (appButton.length) main.querySelector('.page > header').prepend(...appButton);
+  document.getElementById('_pushState').addEventListener('load', function (e) {
+    document.querySelectorAll('article > h2[id]').forEach(function (h2) {
+      var p = document.createElement('p');
+      var cb = document.createElement('clap-button');
+      cb.setAttribute('url', '#' + h2.id);
+      cb.setAttribute('text-placement', 'bottom');
+      cb.setAttribute('nowave', '');
+      p.appendChild(cb);
+      h2.insertAdjacentElement('afterend', p);
+    });
   });
 
   /* Manual dark mode picture source fix */

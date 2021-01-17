@@ -24,7 +24,7 @@ clap-button {
   --clap-button-color: var(--accent-color);
 }
 
-h2 + p > clap-button[url^="#"] {
+h2 + p > clap-button {
   margin: 0;
   width: 3rem;
   height: 3rem;
