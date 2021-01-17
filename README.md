@@ -1,24 +1,21 @@
 ---
-title: Worker Environments
+layout: landing
+logo: |
+  <picture>
+    <source srcset="assets/img/logo_d.svg" media="(prefers-color-scheme: dark)">
+    <img src="assets/img/logo_l.svg" alt="Logo" width="172" height="172">
+  </picture>
+description: >
+  Worker Environments are the new standard for writing HTTP servers in JavaScript.
+buttons: >
+  [Get Started](#state-of-worker-environments){:.btn.btn-primary}
+  [Contribute](#contributing){:.btn.btn-default style="font-weight:normal"}
 ---
 
-<p align="center"><picture class="app-button" style="display:block; text-align:center">
-  <source srcset="assets/img/logo_d.svg" media="(prefers-color-scheme: dark)">
-  <img src="assets/img/logo_l.svg" alt="Logo" style="height:10rem; width:10rem; margin:5rem 0" width="172" height="172">
-</picture></p>
-
-Worker Environments are the new standard for writing HTTP servers in JavaScript.
-{:.lead.centered style="max-width:560px;margin-left:auto;margin-right:auto"}
-
-[Get Started](#state-of-worker-environments){:.btn.btn-primary}
-[Contribute](#contributing){:.btn.btn-default style="font-weight:normal"}
-{:.centered.mt2.mb4}
-
-***
+# Worker Environments
 
 * Table of Contents
 {:toc .large-only}
-
 
 ## Origin
 
@@ -179,6 +176,7 @@ These are useful APIs provided by one or more Worker Environment that aren't on 
 
 🚫
 : Not supported
+{:.legend}
 
 
 ### Frameworks
@@ -203,62 +201,13 @@ Are you aware of any other Worker Environments available or in development? Did 
 <br/>
 
 <style>
-.page > p { position: relative }
-.page > header > h1 + .hr { 
-  display: none; 
-}
+  dl.legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 36px minmax(min(300px, 100%), 1fr));
+    grid-gap: 0.5rem;
+  }
 
-.mt6 { margin-top: 6rem }
-.mb2 { margin-bottom: 1.5rem }
-
-h1, h2, h3, .h1, .h2, .h3 { margin-top: 4rem }
-h4, h5, h6, .h4, .h5, .h6 { margin-top: 3rem }
-.page > hr { margin: 4rem 0 }
-
-clap-button {
-  --clap-button-color: var(--accent-color);
-}
-
-h2 + p > clap-button[url^="#"] {
-  margin: 0;
-  width: 3rem;
-  height: 3rem;
-  position: absolute;
-  left: -6rem;
-  margin-top: -3rem;
-  font-size: smaller;
-  color: var(--gray-text);
-  --clap-button-color: var(--menu-text);
-}
-
-.page > header > h1 { 
-  width: 100%!important;
-  font-size: 4rem;
-  text-align: center;
-  width: 100%!important;
-}
-
-.larger { font-size: larger; }
-.smaller { font-size: smaller; }
-
-.layout-welcome { padding-top: 4rem; }
-#_navbar { transform: translateY(-5rem); }
-
-#legend + dl {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 36px minmax(min(300px, 100%), 1fr));
-  grid-gap: 0.5rem;
-}
-#legend + dl dd {
-  margin: 0;
-}
-
-.btn-primary { color: #333; }
-.btn-primary:hover { color: #333; }
-
-table.stretch-table { margin: 2rem -1rem!important; width:calc(100% + 2rem)!important; }
-
+  dl.legend dd {
+    margin: 0;
+  }
 </style>
-<script>
-  window.dispatchEvent(new HashChangeEvent('hashchange', { newURL: new URL('#noop', location).href }));
-</script>

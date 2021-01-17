@@ -15,3 +15,31 @@
   text-decoration-color: #333;
   border-bottom-color: #333;
 }
+
+.page > p { 
+  position: relative 
+}
+
+clap-button {
+  --clap-button-color: var(--accent-color);
+}
+
+h2 + p > clap-button[url^="#"] {
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  left: -6rem;
+  margin-top: -3rem;
+  font-size: smaller;
+  color: var(--gray-text);
+  --clap-button-color: var(--menu-text);
+}
+
+table.stretch-table { 
+  margin: 2rem -1rem!important; 
+  width: calc(100% + 2rem)!important; 
+}
+
+.btn-primary { color: #333; }
+.btn-primary:hover { color: #333; }
