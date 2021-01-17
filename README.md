@@ -25,7 +25,18 @@ Worker Environments are a **derivation of the [Server Workers API][1]**, which i
 Since it was published, **other vendors have adopted this API** for HTTP servers that run in the cloud — or on the edge in the case of [Cloudflare Workers][2]. Together with Service Workers, they are known as _Worker Environments_, or _Worker Contexts_.
 
 
-## Frontend for Backend
+```js
+self.addEventListener('fetch', event => {
+  event.respondWith(new Response('Hello World'));
+});
+```
+{:.larger}
+
+Minimal example of a server written in a Worker Environment.
+{:.figcaption}
+
+
+## Backend for Frontend
 
 Worker Environments fulfill the original promise of NodeJS: To use one language and share code between client and server. In practice, this never came to be. Instead the worlds of node and browsers have diverged[^1]. Worker Environments are bringing them back together.  
 
@@ -41,7 +52,7 @@ Worker Environments are en extension of the API Economy: As more functionality m
   <img src="assets/img/1_l.svg" alt="1" style="max-width:34rem">
 </picture>
 
-Figure 1: How web services used to be written.  
+How web services used to be written.  
 {:.figcaption}
 
 In some cases, backends are reduced to storing credentials for 3rd party APIs. 
@@ -53,7 +64,7 @@ Having a fully-fledged NodeJS environment with native dependencies, FFI, etc. be
   <img src="assets/img/2_l.svg" alt="1" style="max-width:34rem">
 </picture>
 
-Figure 2: The model for the next decade: Edge Workers sit between Service Workers and 3rd Party APIs.   
+The model for the next decade: Edge Workers sit between Service Workers and 3rd Party APIs.   
 {:.figcaption}
 
 <!-- Over the past 2 decades, this model has changed significantly. Functionality that used to be part of the monolith, has been migrated into microservices (if company-internal), or 3rd party APIs (if shared between many companies). -->
@@ -63,8 +74,6 @@ Taking this model to its logical conclusion, backends shrink to the size of API 
 ***
 
 ## State of Worker Environments
-
-<!-- Are We Worker Environment Yet? -->
 
 There is currently 1 (one) fully-featured Worker Environment and 1 (one) alternative being implemented.
 {:.note title="Summary"}
