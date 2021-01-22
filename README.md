@@ -19,11 +19,11 @@ buttons: >
 
 ## Origin
 
-Worker Environments are an **adaptation** of the [Server Workers API][1], which is a browser standard for offline web applications that includes a specification for a (minimal) HTTP server. Since it was published, **other vendors have implemented this API** for HTTP servers that run in the cloud — or on the edge in the case of [Cloudflare Workers][cw]. 
+Worker Environments are an **adaptation** of the [Server Workers API][1], which is a browser standard for offline web applications that includes a (minimal) HTTP server. Since it was published, **other vendors have implemented this API** for HTTP servers that run in the cloud — or on the edge in the case of [Cloudflare Workers][cw]. 
 
-Typically, they also implement other browser-centric APIs such as Fetch, Streams, and Web Cryptography, making their global scope very similar to that of a browser-based Service Worker. Together, they are known as _Worker Environments_ or _Worker Contexts_. 
+Typically, they also implement other browser-centric APIs such as Fetch, Streams, and Web Cryptography, making their global scope very similar to that of a browser-based Service Worker. When they do we call them _Worker Environments_ or _Worker Contexts_. 
 
-To see which APIs are avaialabe, check out the [State of Worker Environments](#state-of-worker-environments){:.heading} below.
+To see which APIs are available, check out the [State of Worker Environments](#state-of-worker-environments){:.heading} below.
 
 
 ```js
