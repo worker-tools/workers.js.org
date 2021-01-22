@@ -1,5 +1,5 @@
-url:                   https://worker-tools.github.io
-baseurl:               '/workers.js.org'
+url:                   https://workers.js.org
+baseurl:               ''
 
 lang:                  en
 
