@@ -2,6 +2,7 @@
 .sidebar {
   color: rgba(51, 51, 51, 0.75);
 }
+
 .sidebar h1, .sidebar a {
   color: #333;
 }
@@ -34,11 +35,6 @@ h2 + p > clap-button {
   font-size: smaller;
   color: var(--gray-text);
   --clap-button-color: var(--menu-text);
-}
-
-table.stretch-table { 
-  margin: 2rem -1rem!important; 
-  width: calc(100% + 2rem)!important; 
 }
 
 .btn-primary { color: #333; }
