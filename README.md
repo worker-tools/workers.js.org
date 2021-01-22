@@ -19,10 +19,11 @@ buttons: >
 
 ## Origin
 
-Worker Environments are a **derivation of the [Server Workers API][1]**, which is a browser standard for offline web applications. To give developers more freedom over offline experiences, the specification includes a (minimal) HTTP server API. 
-<!-- These are known as *Service Workers*. -->
+Worker Environments are an **adaptation** of the [Server Workers API][1], which is a browser standard for offline web applications that includes a specification for a (minimal) HTTP server. Since it was published, **other vendors have implemented this API** for HTTP servers that run in the cloud — or on the edge in the case of [Cloudflare Workers][cw]. 
 
-Since it was published, **other vendors have adopted this API** for HTTP servers that run in the cloud — or on the edge in the case of [Cloudflare Workers][2]. Together with Service Workers, they are known as _Worker Environments_, or _Worker Contexts_.
+Typically, they also implement other browser-centric APIs such as Fetch, Streams, and Web Cryptography, making their global scope very similar to that of a browser-based Service Worker. Together, they are known as _Worker Environments_ or _Worker Contexts_. 
+
+To see which APIs are avaialabe, check out the [State of Worker Environments](#state-of-worker-environments){:.heading} below.
 
 
 ```js
@@ -40,7 +41,7 @@ Minimal example of a server written in a Worker Environment.
 
 Worker Environments fulfill the original promise of NodeJS: To use one language and share code between client and server. In practice, this never came to be. Instead the worlds of node and browsers have diverged[^1]. Worker Environments are bringing them back together.  
 
-This is good news for Frontend Developers in particular: The knowledge ac- and re-quired for building offline web applications can now be applied to writing HTTP servers --- and vice-versa.
+This is good news for Frontend Developers in particular: The knowledge ac- and required for building offline web applications can now be applied to writing HTTP servers --- and so can [the tools][wt].
 
 
 ## The API Economy
@@ -67,8 +68,6 @@ Having a fully-fledged NodeJS environment with native dependencies, FFI, etc. be
 The model for the next decade: Edge Workers sit between Service Workers and 3rd Party APIs.   
 {:.figcaption}
 
-<!-- Over the past 2 decades, this model has changed significantly. Functionality that used to be part of the monolith, has been migrated into microservices (if company-internal), or 3rd party APIs (if shared between many companies). -->
-
 Taking this model to its logical conclusion, backends shrink to the size of API brokers. Scriptable Worker Environments are more than capable of playing that role.
 
 ***
@@ -78,18 +77,20 @@ Taking this model to its logical conclusion, backends shrink to the size of API 
 There is currently 1 (one) fully-featured Worker Environment and 1 (one) alternative being implemented.
 {:.note title="Summary"}
 
+[Cloudflare Workers][cw] is the most complete Worker Environment. It is currently the only one implementing the global `fetch` event, bringing it on par with Service Workers. However, [Deno][dn] is expected to [follow shortly][x6].
+
 <br/>
 
-[![Cloudflare Workers](assets/img/cfworkers.svg){:.fl style="max-width:23rem;margin: 1rem"}][2]{: title="Cloudflare Workers"}
-[![Deno Workers](assets/img/deno.svg){:.fl style="max-height:8rem"}][3]{: title="Deno"}
+[![Cloudflare Workers](assets/img/cfworkers.svg){:.fl style="max-width:23rem;margin: 1rem"}][cw]{: title="Cloudflare Workers"}
+[![Deno Workers](assets/img/deno.svg){:.fl style="max-height:8rem"}][dn]{: title="Deno"}
 
 ***
 {:.clearfix}
 
 <br/>
 
-|                         | Service Workers | Cloudflare Workers | Deno Workers |
-|:------------------------|:---------------:|:------------------:|:------------:|
+|                         | Service Workers | Cloudflare Workers | Deno |
+|:------------------------|:---------------:|:------------------:|:----:|
 | Deployment Domain       | Browser | Edge | Server |
 | Open Source             | ✅ | 🚫 | ✅ |
 | 1.0                     | ✅ | ✅ | 🔜 |
@@ -101,8 +102,8 @@ There is currently 1 (one) fully-featured Worker Environment and 1 (one) alterna
 The center piece of any Worker Environment is an implementation of the global `fetch` event. 
 Implementations of other browser APIs are necessary for bridging the gap between different worker environments.
 
-| API                     | Service Workers | Cloudflare Workers | Deno Workers |
-|:------------------------|:---------------:|:------------------:|:------------:|
+| API                     | Service Workers | Cloudflare Workers | Deno |
+|:------------------------|:---------------:|:------------------:|:----:|
 | `fetch` event           | ✅ | ✅ | [🔜][x6] |
 | `install` event         | ✅ | 🚫 | ❓ |
 | `activate` event        | ✅ | 🚫 | ❓ |
@@ -130,18 +131,17 @@ Implementations of other browser APIs are necessary for bridging the gap between
 
 
 ### Working Drafts
-<!-- Technically most of the APIs mentioned above are still working drafts. However, they are well supported in current browsers and Worker Environments (as outlined above).  -->
 The APIs below are either abandoned or do not have buy-in from major browser vendors. However, they can still be reasonable targets for 3rd party libraries, such as KV stores or cookie middleware.
 
-| API                     | Service Workers | Cloudflare Workers | Deno Workers |
-|:------------------------|:---------------:|:------------------:|:------------:|
+| API                     | Service Workers | Cloudflare Workers | Deno |
+|:------------------------|:---------------:|:------------------:|:----:|
 | KV Storage API          | [👨‍💻][w1] | [👨‍💻][w2] | [🚫][w5] |
 | Cookie Store API        | [ℹ️][w3] | [👨‍💻][w4] | [👨‍💻][w4] |
 {:.stretch-table}
 
 [w1]: https://github.com/GoogleChromeLabs/kv-storage-polyfill
 [w2]: https://github.com/worker-tools/cloudflare-kv-storage
-[w3]: https://caniuse.com/mdn-api_cookiestore
+[w3]: https://caniuse.com/cookie-store-api
 [w4]: https://github.com/worker-tools/request-cookie-store
 [w5]: https://github.com/denoland/deno/issues/1923
 
@@ -149,8 +149,8 @@ The APIs below are either abandoned or do not have buy-in from major browser ven
 ### Non-Standard APIs
 These are useful APIs provided by one or more Worker Environment that aren't on any standards track (including abandoned). 
 
-| API                     | Service Workers | Cloudflare Workers | Deno Workers |
-|:------------------------|:---------------:|:------------------:|:------------:|
+| API                     | Service Workers | Cloudflare Workers | Deno |
+|:------------------------|:---------------:|:------------------:|:----:|
 | `scheduled` event       | 🚫 | ✅ | 🚫 |
 | HTMLWriter              | 🚫 | ✅ | 🚫 |
 | KV                      | 🚫 | ✅ | 🚫 |
@@ -184,7 +184,7 @@ These are useful APIs provided by one or more Worker Environment that aren't on 
 No HTTP Server is complete without a Web Framework for common tasks such as routing, sessions, authentication, and more. 
 
 Worker Environments do not have a complete framework yet.
-However, over at [**worker-tools.github.io**](https://worker-tools.github.io){:.external} we're building the libraries and tools necessary for the first generation of Worker-based web frameworks.
+However, over at [**worker-tools.github.io**][wt]{:.external} we're building the libraries and tools necessary for the first generation of Worker-based web frameworks.
 
 ## Contributing
 
@@ -192,8 +192,9 @@ Are you aware of any other Worker Environments available or in development? Did 
 
 
 [1]: https://w3c.github.io/ServiceWorker/
-[2]: https://workers.cloudflare.com
-[3]: https://deno.land
+[cw]: https://workers.cloudflare.com
+[dn]: https://deno.land
+[wt]: https://worker-tools.github.io
 
 [^1]: Node and the browser have diverged due to a lack of browser APIs for many crucial components, including HTTP, streams, file access, and more more. A lot has changed since then. Standards have been written for all of these and more, often informed by the experience of using the node-equivalent.
 
