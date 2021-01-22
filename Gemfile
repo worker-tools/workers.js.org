@@ -2,6 +2,9 @@ source "https://rubygems.org"
 
 gem "jekyll", "~> 4.1"
 
+gem "duktape"
+gem "kramdown-math-katex"
+
 group :jekyll_plugins do
   gem "jekyll-default-layout"
   gem "jekyll-feed"
