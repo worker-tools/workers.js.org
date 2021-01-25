@@ -6,7 +6,7 @@ logo: |
     <img src="assets/img/logo_l.svg" alt="Logo" width="172" height="172">
   </picture>
 description: >
-  Worker Environments are the new standard for writing HTTP servers in JavaScript.
+  Worker Environments are the **new standard** for writing **HTTP servers** in JavaScript.
 buttons: >
   [Get Started](#state-of-worker-environments){:.btn.btn-primary}
   [Contribute](#contributing){:.btn.btn-default style="font-weight:normal"}
@@ -19,11 +19,11 @@ buttons: >
 
 ## Origin
 
-Worker Environments are an **adaptation** of the [Server Workers API][1], which is a browser standard for offline web applications that includes a (minimal) HTTP server. Since it was published, **other vendors have implemented this API** for HTTP servers that run in the cloud — or on the edge in the case of [Cloudflare Workers][cw]. 
+Worker Environments are an **adaptation** of the [Server Workers API][1], which is a browser standard for offline web applications. To give web developers more freedom over offline experiences, it included a (minimal) HTTP server. Since it was published, **other vendors have implemented this API** for HTTP servers running in the cloud — or on the edge in the case of [Cloudflare Workers][cw].
 
-Typically, they also implement other browser-centric APIs such as Fetch, Streams, and Web Cryptography, making their global scope very similar to that of a browser-based Service Worker. When they do we call them _Worker Environments_ or _Worker Contexts_. 
+Typically, they also implement other browser APIs such as Fetch, Streams, and Web Cryptography, making their global scope similar to that of a Service Worker. We call them _Worker Environments_ or _Worker Contexts_. 
 
-To see which APIs are available, check out the [State of Worker Environments](#state-of-worker-environments){:.heading} below.
+To see which vendors and APIs are available, check out the [State of Worker Environments](#state-of-worker-environments){:.heading} below.
 
 
 ```js
@@ -39,7 +39,7 @@ Minimal example of a server written in a Worker Environment.
 
 ## Backend for Frontend
 
-Worker Environments fulfill the original promise of NodeJS: To use one language and share code between client and server. In practice, this never came to be. Instead the worlds of node and browsers have diverged[^1]. Worker Environments are bringing them back together.  
+Worker Environments fulfill the original promise of NodeJS: To use one language and share code between client and server. In practice, this never came to be. Instead the worlds of node and browsers have diverged[^1]. Worker Environments are bringing hem back together.  
 
 This is good news for Frontend Developers in particular: The knowledge ac- and required for building offline web applications can now be applied to writing HTTP servers --- and so can [the tools][wt].
 
