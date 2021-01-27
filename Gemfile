@@ -24,7 +24,7 @@ end
 if ENV['JEKYLL_ENV'] == 'development'
   gem "jekyll-theme-hydejack", path: "~/GitHub/hydecorp/hydejack-site/#jekyll-theme-hydejack"
 else
-  gem "jekyll-theme-hydejack", git: "https://github.com/hydecorp/hydejack-dev", tag: "pro/v9.1.0-hysenberg.7"
+  gem "jekyll-theme-hydejack", git: "https://github.com/hydecorp/hydejack-dev", tag: "pro/v9.1.0-hysenberg.8"
 end
 
 gem 'wdm' if Gem.win_platform?
