@@ -61,6 +61,10 @@ theme_color:           '#f7df1e'
 
 defaults:
   - scope:
+      path:            ''
+    values:
+      invert_sidebar:  true
+  - scope:
       path:            README
     values:
       layout:          welcome

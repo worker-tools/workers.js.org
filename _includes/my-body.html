@@ -1,6 +1,6 @@
 <script>
-  document.getElementById('_pushState').addEventListener('load', function (e) {
-    document.querySelectorAll('article > h2[id]').forEach(function (h2) {
+  document.getElementById('_pushState').addEventListener('load', (e) => {
+    document.querySelectorAll('article > h2[id]').forEach((h2) => {
       var p = document.createElement('p');
       var cb = document.createElement('clap-button');
       cb.setAttribute('url', '#' + h2.id);
@@ -11,20 +11,28 @@
     });
   });
 
-  /* Manual dark mode picture source fix */
-  /* TODO: what if content changes? */ 
-  document.querySelectorAll('picture').forEach(pic => {
-    const source = pic.querySelector('source[media*="dark"]');
-    const img = pic.querySelector('img');
-    if (source && img) {
-      pic.dataset.lightSrc = img.src;
-      pic.dataset.darkSrc = source.srcset;
-    }
+  document.getElementById('_pushState').addEventListener('ready', (e) => {
+    prepare(e.detail.replaceEls[0]);
+    updateImg(e.detail.replaceEls[0]);
   });
 
-  new MutationObserver((e) => {
-    if (e[0].target.classList.contains('dark-mode')) {
-      document.querySelectorAll('picture').forEach(pic => {
+  let darkMode = undefined;
+  prepare(document);
+
+  function prepare(main) {
+    if (main) main.querySelectorAll('picture').forEach(pic => {
+      const source = pic.querySelector('source[media*="dark"]');
+      const img = pic.querySelector('img');
+      if (source && img) {
+        pic.dataset.lightSrc = img.src;
+        pic.dataset.darkSrc = source.srcset;
+      }
+    });
+  }
+
+  function updateImg(main) {
+    if (darkMode === true) {
+      main.querySelectorAll('picture').forEach(pic => {
         const source = pic.querySelector('source[media*="dark"]');
         const img = pic.querySelector('img');
         if (img && pic.dataset.darkSrc) {
@@ -32,8 +40,8 @@
           if (source) pic.removeChild(source);
         }
       });
-    } else if (e[0].target.classList.contains('light-mode')) {
-      document.querySelectorAll('picture').forEach(pic => {
+    } else if (darkMode === false) {
+      main.querySelectorAll('picture').forEach(pic => {
         const source = pic.querySelector('source[media*="dark"]');
         const img = pic.querySelector('img');
         if (img && pic.dataset.lightSrc) {
@@ -42,101 +50,10 @@
         }
       });
     }
-  }).observe(document.body, { attributes: true });
-</script>
+  }
 
-{% comment %}
-<!--
-Code for integrating CloudFlare's email protection with Hydejack's single page app loading.
--->
-<script>
-  document.getElementById('_pushState').addEventListener('hy-push-state-after', function (e) {
-    function e(e) {
-      (console.error ? console.error : console.log).call(console, e)
-    }
-
-    function t(e) {
-      return l.innerHTML = '<a href="' + e.replace(/"/g, "&quot;") + '"></a>', l.childNodes[0].getAttribute("href")
-    }
-
-    function r(e, t) {
-      var r = e.substr(t, 2); return parseInt(r, 16)
-    }
-
-    function n(e, n) {
-      for (var o = "", c = r(e, n), a = n + 2; a < e.length; a += 2) {
-        var l = r(e, a) ^ c;
-        o += String.fromCharCode(l)
-      }
-      return t(o)
-    }
-
-    var o = "/cdn-cgi/l/email-protection#",
-      c = ".__cf_email__",
-      a = "data-cfemail",
-      l = document.createElement("div");
-
-    !function () {
-      for (var t = document.getElementsByTagName("a"), r = 0; r < t.length; r++)
-        try {
-          var c = t[r], a = c.href.indexOf(o);
-          a > -1 && (c.href = "mailto:" + n(c.href, a + o.length))
-        } catch (t) {
-          e(t)
-        }
-    }(),
-      function () {
-        for (var t = document.querySelectorAll(c), r = 0; r < t.length; r++)
-          try {
-            var o = t[r], l = n(o.getAttribute(a), 0), i = document.createTextNode(l);
-            o.parentNode.replaceChild(i, o)
-          } catch (t) {
-            e(t)
-          }
-      }()
+  document.body.addEventListener('hydejack-dark-mode-toggle', (e) => {
+    darkMode = e.detail;
+    updateImg(document);
   });
 </script>
-
-<!-- <script>
-  var API = 'http://localhost:8787';
-
-  var createCheckoutSession = function (priceId) {
-    return fetch(new URL("/stripe/checkout-session", API), {
-      mode: 'cors',
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ priceId: priceId })
-    }).then(function (result) { return result.json() });
-  };
-
-  var handleResult = function (result) {
-    if (result.error) {
-      console.error(result.error);
-      /*
-      var displayError = document.getElementById("error-message");
-      displayError.textContent = result.error.message;
-      */
-    }
-  };
-
-  var publishableKey, priceId, stripe;
-  var stripePromise = fetch(new URL("/stripe/setup", API), { mode: 'cors' })
-    .then(function (result) { return result.json() })
-    .then(function (json) {
-      publishableKey = json.publishableKey;
-      priceId = json.priceId;
-      stripe = Stripe(publishableKey);
-    });
-  document.getElementById('_pushState').addEventListener('load', function (e) {
-    document.querySelectorAll(".subscribe").forEach(function (el) {
-      el.addEventListener("click", function (evt) {
-        evt.preventDefault();
-        evt.stopImmediatePropagation();
-        stripePromise.then(function() { return createCheckoutSession(priceId); }).then(function (data) {
-          stripe.redirectToCheckout({ sessionId: data.sessionId }).then(handleResult);
-        });
-      });
-    });
-  });
-</script> -->
-{% endcomment %}
