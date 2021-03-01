@@ -81,8 +81,8 @@ There is currently 1 (one) fully-featured Worker Environment and 1 (one) alterna
 
 <br/>
 
-[![Cloudflare Workers](assets/img/cfworkers.svg){:.fl style="max-width:23rem;margin: 1rem"}][cw]{: title="Cloudflare Workers"}
-[![Deno Workers](assets/img/deno.svg){:.fl style="max-height:8rem"}][dn]{: title="Deno"}
+[![Cloudflare Workers](assets/img/cfworkers.svg){:.fl style="max-width:23rem;margin: 1rem"}][cw]{:.no-mark title="Cloudflare Workers"}
+[![Deno Workers](assets/img/deno.svg){:.fl style="max-height:8rem"}][dn]{:.no-mark title="Deno"}
 
 ***
 {:.clearfix}
@@ -104,20 +104,19 @@ Implementations of other browser APIs are necessary for bridging the gap between
 
 | API                     | Service Workers | Cloudflare Workers | Deno |
 |:------------------------|:---------------:|:------------------:|:----:|
-| `fetch` event           | ✅ | ✅ | [🔜][x6] |
+| `fetch` event           | ✅ | ✅ | [🔜][x6]{:.no-mark} |
 | `install` event         | ✅ | 🚫 | ❓ |
 | `activate` event        | ✅ | 🚫 | ❓ |
-| URL API                 | ✅ | [ℹ️][x5] | ✅ |
+| URL API                 | ✅ | [ℹ️][x5]{:.no-mark} | ✅ |
 | Fetch API               | ✅ | ✅ | ✅ |
-| Abort Controller        | ✅ | [👨‍💻][x1] | ✅ |
+| Abort Controller        | ✅ | [👨‍💻][x1]{:.no-mark} | ✅ |
 | Encoding API            | ✅ | ✅ | ✅ |
-| Streams API             | [ℹ️][x2] | [ℹ️][x4] | [🔜][x7] |
-| Encoding Streams        | ℹ️ | 🚫 | 🚫 |
-| Web Cryptography API    | ✅ | ✅ | [🔜][x8] |
+| Streams API             | [ℹ️][x2]{:.no-mark} | [ℹ️][x4]{:.no-mark} | ✅ |
+| Web Cryptography API    | ✅ | ✅ | [🔜][x8]{:.no-mark} |
 | Cache API               | ✅ | ℹ️ | 🚫 |
 | WebSockets              | ✅ | ℹ️ | ✅ |
 | Timers                  | ✅ | ✅ | ✅ |
-| IndexedDB               | ✅ | 🚫 | [🚫][x3] |
+| IndexedDB               | ✅ | 🚫 | [🚫][x3]{:.no-mark} |
 {:.stretch-table}
 
 [x1]: https://github.com/benlesh/abort-controller-polyfill
@@ -135,8 +134,8 @@ The APIs below are either abandoned or do not have buy-in from major browser ven
 
 | API                     | Service Workers | Cloudflare Workers | Deno |
 |:------------------------|:---------------:|:------------------:|:----:|
-| KV Storage API          | [👨‍💻][w1] | [👨‍💻][w2] | [🚫][w5] |
-| Cookie Store API        | [ℹ️][w3] | [👨‍💻][w4] | [👨‍💻][w4] |
+| KV Storage API          | [👨‍💻][w1]{:.no-mark} | [👨‍💻][w2]{:.no-mark} | [🚫][w5]{:.no-mark} |
+| Cookie Store API        | [ℹ️][w3]{:.no-mark} | [👨‍💻][w4]{:.no-mark} | [👨‍💻][w4]{:.no-mark} |
 {:.stretch-table}
 
 [w1]: https://github.com/GoogleChromeLabs/kv-storage-polyfill
