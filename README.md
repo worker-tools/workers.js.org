@@ -134,7 +134,7 @@ The APIs below are either abandoned or do not have buy-in from major browser ven
 
 | API                     | Service Workers | Cloudflare Workers | Deno |
 |:------------------------|:---------------:|:------------------:|:----:|
-| KV Storage API          | [👨‍💻][w1]{:.no-mark} | [👨‍💻][w2]{:.no-mark} | [🚫][w5]{:.no-mark} |
+| KV Storage API          | [👨‍💻][w1]{:.no-mark} | [👨‍💻][w2]{:.no-mark} | [👨‍💻][w6]{:.no-mark} |
 | Cookie Store API        | [ℹ️][w3]{:.no-mark} | [👨‍💻][w4]{:.no-mark} | [👨‍💻][w4]{:.no-mark} |
 {:.stretch-table}
 
@@ -143,6 +143,7 @@ The APIs below are either abandoned or do not have buy-in from major browser ven
 [w3]: https://caniuse.com/cookie-store-api
 [w4]: https://github.com/worker-tools/request-cookie-store
 [w5]: https://github.com/denoland/deno/issues/1923
+[w6]: https://github.com/worker-tools/deno-kv-storage
 
 
 ### Non-Standard APIs
