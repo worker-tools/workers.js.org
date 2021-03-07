@@ -19,7 +19,7 @@ buttons: >
 
 ## Origin
 
-Worker Environments are an **adaptation** of the [Server Workers API][1], which is a browser standard for offline web applications. To give web developers more freedom over offline experiences, it included a (minimal) HTTP server. Since it was published, **other vendors have implemented this API** for HTTP servers running in the cloud — or on the edge in the case of [Cloudflare Workers][cw].
+Worker Environments are an **adaptation** of the [Service Workers API][1], which is a browser standard for offline web applications. To give web developers more freedom over offline experiences, it included a (minimal) HTTP server. Since it was published, **other vendors have implemented this API** for HTTP servers running in the cloud — or on the edge in the case of [Cloudflare Workers][cw].
 
 Typically, they also implement other browser APIs such as Fetch, Streams, and Web Cryptography, making their global scope similar to that of a Service Worker. We call them _Worker Environments_ or _Worker Contexts_. 
 
@@ -117,7 +117,7 @@ Implementations of other browser APIs are necessary for bridging the gap between
 | WebSockets              | ✅ | ℹ️ | ✅ |
 | Location API            | ✅ | 🚫️ | ✅ |
 | Timers                  | ✅ | ✅ | ✅ |
-| IndexedDB               | ✅ | 🚫 | [🚫][x3]{:.no-mark} |
+| IndexedDB               | ✅ | 🚫 | [❓][x3]{:.no-mark} |
 {:.stretch-table}
 
 [x1]: https://github.com/benlesh/abort-controller-polyfill
