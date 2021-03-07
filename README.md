@@ -115,6 +115,7 @@ Implementations of other browser APIs are necessary for bridging the gap between
 | Web Cryptography API    | ✅ | ✅ | [🔜][x8]{:.no-mark} |
 | Cache API               | ✅ | ℹ️ | 🚫 |
 | WebSockets              | ✅ | ℹ️ | ✅ |
+| Location API            | ✅ | 🚫️ | ✅ |
 | Timers                  | ✅ | ✅ | ✅ |
 | IndexedDB               | ✅ | 🚫 | [🚫][x3]{:.no-mark} |
 {:.stretch-table}
