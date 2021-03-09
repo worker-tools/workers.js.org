@@ -86,7 +86,7 @@ Implementations of other browser APIs are necessary for bridging the gap between
 | Web Cryptography API    | ✅ | ✅ | [🔜][x8]{:.no-mark} |
 | Cache API               | ✅ | ℹ️ | 🚫 |
 | WebSockets              | ✅ | ℹ️ | ✅ |
-| Location API            | ✅ | 🚫️ | ✅ |
+| Location API            | ✅ | [👨‍💻][x9]{:.no-mark}️ | ✅ |
 | Timers                  | ✅ | ✅ | ✅ |
 | IndexedDB               | ✅ | 🚫 | [❓][x3]{:.no-mark} |
 {:.stretch-table}
@@ -99,6 +99,7 @@ Implementations of other browser APIs are necessary for bridging the gap between
 [x6]: https://github.com/denoland/deno/issues/5957#issuecomment-722568905
 [x7]: https://github.com/denoland/deno/issues/8824#:~:Re-align%20Streams%20to%20current%20standards
 [x8]: https://github.com/denoland/deno/issues/1891
+[x9]: https://github.com/worker-tools/location-polyfill
 
 
 ### Working Drafts
@@ -124,7 +125,7 @@ These are useful APIs provided by one or more Worker Environment that aren't on 
 | API                     | Service Workers | Cloudflare Workers | Deno |
 |:------------------------|:---------------:|:------------------:|:----:|
 | [`scheduled` event][u1] | 🚫 | ✅ | 🚫 |
-| [HTMLWriter][u2]        | 🚫 | ✅ | 🚫 |
+| [HTMLRewriter][u2]        | 🚫 | ✅ | 🚫 |
 | [KV][u3]                | 🚫 | ✅ | 🚫 |
 | [Durable Objects][u4]   | 🚫 | ✅ | 🚫 |
 {:.stretch-table}
@@ -189,9 +190,9 @@ Are you aware of any other Worker Environments available or in development? Did 
   }
 </style>
 
+***
 
-## Errata
-### The API Economy
+## The API Economy
 Worker Environments are not meant to provide everything traditional web servers did. They are better understood as the "glue" between browser clients and various API backends that have taken over much of their functionality. Consider the difference between traditional web architecture and the "API Economy":
 
 <picture style="display:block;text-align:center">
