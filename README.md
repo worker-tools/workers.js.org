@@ -19,12 +19,11 @@ buttons: >
 
 ## Origin
 
-Worker Environments are an **adaptation** of the [Service Workers API][1], which is a browser standard for offline web applications. To give web developers more freedom over offline experiences, it included a (minimal) HTTP server. Since it was published, **other vendors have implemented this API** for HTTP servers running in the cloud — or on the edge in the case of [Cloudflare Workers][cw].
+Worker Environments are an **adaptation** of the [Service Workers API][1], which is a browser standard for offline web applications. To give web developers more freedom over offline experiences, the specification includes a (minimal) HTTP server. Since it was published, **other vendors have implemented this API** for servers that run in the cloud — or on the edge in the case of [Cloudflare Workers][cw].
 
 Typically, they also implement other browser APIs such as Fetch, Streams, and Web Cryptography, making their global scope similar to that of a Service Worker. We call them _Worker Environments_ or _Worker Contexts_. 
 
-To see which vendors and APIs are available, check out the [State of Worker Environments](#state-of-worker-environments){:.heading} below.
-
+To see which vendors and APIs are available, check out the [State of Worker Environments](#state-of-worker-environments){:.heading} below. See the example below for a minimal HTTP server:
 
 ```js
 self.addEventListener('fetch', event => {
@@ -43,34 +42,6 @@ Worker Environments fulfill the original promise of NodeJS: To use one language 
 
 This is good news for Frontend Developers in particular: The knowledge ac- and required for building offline web applications can now be applied to writing HTTP servers --- and so can [the tools][wt].
 
-
-## The API Economy
-
-Worker Environments are en extension of the API Economy: As more functionality moves into 3rd party providers sitting behind HTTP APIs, backends themselves become smaller. 
-
-<picture style="display:block;text-align:center">
-  <source srcset="assets/img/1_d.svg" media="(prefers-color-scheme:dark)">
-  <img src="assets/img/1_l.svg" alt="1" style="max-width:34rem">
-</picture>
-
-How web services used to be written.  
-{:.figcaption}
-
-In some cases, backends are reduced to storing credentials for 3rd party APIs. 
-Having a fully-fledged NodeJS environment with native dependencies, FFI, etc. becomes increasingly unnecessary.
-{:.mb2}
-
-<picture style="display:block;text-align:center">
-  <source srcset="assets/img/2_d.svg" media="(prefers-color-scheme:dark)">
-  <img src="assets/img/2_l.svg" alt="1" style="max-width:34rem">
-</picture>
-
-The model for the next decade: Edge Workers sit between Service Workers and 3rd Party APIs.   
-{:.figcaption}
-
-Taking this model to its logical conclusion, backends shrink to the size of API brokers. Scriptable Worker Environments are more than capable of playing that role.
-
-***
 
 ## State of Worker Environments
 
@@ -212,3 +183,27 @@ Are you aware of any other Worker Environments available or in development? Did 
     margin: 0;
   }
 </style>
+
+
+## Errata
+### The API Economy
+Worker Environments are not meant to provide everything traditional web servers did. They are better understood as the "glue" between browser clients and various API backends that have taken over much of their functionality. Consider the difference between traditional web architecture and the "API Economy":
+
+<picture style="display:block;text-align:center">
+  <source srcset="assets/img/1_d.svg" media="(prefers-color-scheme:dark)">
+  <img src="assets/img/1_l.svg" alt="1" style="max-width:34rem">
+</picture>
+
+How web services used to be written.  
+{:.figcaption}
+
+<picture style="display:block;text-align:center">
+  <source srcset="assets/img/2_d.svg" media="(prefers-color-scheme:dark)">
+  <img src="assets/img/2_l.svg" alt="1" style="max-width:34rem">
+</picture>
+
+The model for the next decade: Edge Workers sit between Service Workers and 3rd Party APIs.   
+{:.figcaption}
+
+Taking this model to its logical conclusion, backends shrink to the size of API brokers. Scriptable Worker Environments are more than capable of playing that role.
+
