@@ -123,11 +123,16 @@ These are useful APIs provided by one or more Worker Environment that aren't on 
 
 | API                     | Service Workers | Cloudflare Workers | Deno |
 |:------------------------|:---------------:|:------------------:|:----:|
-| `scheduled` event       | 🚫 | ✅ | 🚫 |
-| HTMLWriter              | 🚫 | ✅ | 🚫 |
-| KV                      | 🚫 | ✅ | 🚫 |
-| Durable Objects         | 🚫 | ✅ | 🚫 |
+| [`scheduled` event][u1] | 🚫 | ✅ | 🚫 |
+| [HTMLWriter][u2]        | 🚫 | ✅ | 🚫 |
+| [KV][u3]                | 🚫 | ✅ | 🚫 |
+| [Durable Objects][u4]   | 🚫 | ✅ | 🚫 |
 {:.stretch-table}
+
+[u1]: https://developers.cloudflare.com/workers/runtime-apis/scheduled-event
+[u2]: https://developers.cloudflare.com/workers/runtime-apis/html-rewriter
+[u3]: https://developers.cloudflare.com/workers/runtime-apis/kv
+[u4]: https://developers.cloudflare.com/workers/runtime-apis/durable-objects
 
 
 ### Legend
