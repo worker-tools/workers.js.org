@@ -68,6 +68,28 @@ There is currently 1 (one) fully-featured Worker Environment and 1 (one) alterna
 {:.stretch-table}
 
 
+### Legend
+
+✅
+: Supported
+ 
+ℹ️
+: Partial support / attention required
+
+🔜
+: Implementation in progress
+
+👨‍💻
+: Supported via 3rd party library / polyfill
+
+❓
+: Support to be determined
+
+🚫
+: Not supported
+{:.legend}
+
+
 ### Browser APIs
 
 The center piece of any Worker Environment is an implementation of the global `fetch` event. 
@@ -91,7 +113,7 @@ Implementations of other browser APIs are necessary for bridging the gap between
 | IndexedDB               | ✅ | 🚫 | [❓][x3]{:.no-mark} |
 {:.stretch-table}
 
-[x1]: https://github.com/benlesh/abort-controller-polyfill
+[x1]: https://github.com/mo/abortcontroller-polyfill
 [x2]: https://caniuse.com/streams
 [x3]: https://github.com/denoland/deno/issues/1699
 [x4]: https://developers.cloudflare.com/workers/learning/using-streams
@@ -125,7 +147,7 @@ These are useful APIs provided by one or more Worker Environment that aren't on 
 | API                     | Service Workers | Cloudflare Workers | Deno |
 |:------------------------|:---------------:|:------------------:|:----:|
 | [`scheduled` event][u1] | 🚫 | ✅ | 🚫 |
-| [HTMLRewriter][u2]        | 🚫 | ✅ | 🚫 |
+| [HTMLRewriter][u2]      | 🚫 | ✅ | 🚫 |
 | [KV][u3]                | 🚫 | ✅ | 🚫 |
 | [Durable Objects][u4]   | 🚫 | ✅ | 🚫 |
 {:.stretch-table}
@@ -134,28 +156,6 @@ These are useful APIs provided by one or more Worker Environment that aren't on 
 [u2]: https://developers.cloudflare.com/workers/runtime-apis/html-rewriter
 [u3]: https://developers.cloudflare.com/workers/runtime-apis/kv
 [u4]: https://developers.cloudflare.com/workers/runtime-apis/durable-objects
-
-
-### Legend
-
-✅
-: Supported
- 
-ℹ️
-: Partial support / attention required
-
-🔜
-: Implementation in progress
-
-👨‍💻
-: Supported via 3rd party library / polyfill
-
-❓
-: Support to be determined
-
-🚫
-: Not supported
-{:.legend}
 
 
 ### Frameworks
