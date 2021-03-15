@@ -107,8 +107,8 @@ Implementations of other browser APIs are necessary for bridging the gap between
 | Streams API             | [ℹ️][x2]{:.no-mark} | [ℹ️][x4]{:.no-mark} | ✅ |
 | Encoding Streams        | [ℹ️][x0]{:.no-mark} | 🚫 | 🚫 |
 | Web Cryptography API    | ✅ | ✅ | [🔜][x8]{:.no-mark} |
-| Cache API               | ✅ | ℹ️ | 🚫 |
-| WebSockets              | ✅ | ℹ️ | ✅ |
+| Cache API               | ✅ | [ℹ️][xa]{:.no-mark} | 🚫 |
+| WebSockets              | ✅ | 🚫 | ✅ |
 | Location API            | ✅ | [👨‍💻][x9]{:.no-mark}️ | ✅ |
 | Timers                  | ✅ | ✅ | ✅ |
 | IndexedDB               | ✅ | 🚫 | [❓][x3]{:.no-mark} |
@@ -124,6 +124,7 @@ Implementations of other browser APIs are necessary for bridging the gap between
 [x8]: https://github.com/denoland/deno/issues/1891
 [x9]: https://github.com/worker-tools/location-polyfill
 [x0]: https://caniuse.com/?search=text(en%7Cde)coderstream
+[xa]: https://developers.cloudflare.com/workers/learning/how-the-cache-works
 
 
 ### Working Drafts
