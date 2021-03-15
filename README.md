@@ -105,6 +105,7 @@ Implementations of other browser APIs are necessary for bridging the gap between
 | Abort Controller        | ✅ | [👨‍💻][x1]{:.no-mark} | ✅ |
 | Encoding API            | ✅ | ✅ | ✅ |
 | Streams API             | [ℹ️][x2]{:.no-mark} | [ℹ️][x4]{:.no-mark} | ✅ |
+| Encoding Streams        | [ℹ️][x0]{:.no-mark} | 🚫 | 🚫 |
 | Web Cryptography API    | ✅ | ✅ | [🔜][x8]{:.no-mark} |
 | Cache API               | ✅ | ℹ️ | 🚫 |
 | WebSockets              | ✅ | ℹ️ | ✅ |
@@ -122,6 +123,7 @@ Implementations of other browser APIs are necessary for bridging the gap between
 [x7]: https://github.com/denoland/deno/issues/8824#:~:Re-align%20Streams%20to%20current%20standards
 [x8]: https://github.com/denoland/deno/issues/1891
 [x9]: https://github.com/worker-tools/location-polyfill
+[x0]: https://caniuse.com/?search=text(en%7Cde)coderstream
 
 
 ### Working Drafts
