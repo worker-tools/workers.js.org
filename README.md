@@ -97,9 +97,9 @@ Implementations of other browser APIs are necessary for bridging the gap between
 
 | API                     | Service Workers | Cloudflare Workers | Deno |
 |:------------------------|:---------------:|:------------------:|:----:|
-| `fetch` event           | ✅ | ✅ | [🔜][x6]{:.no-mark} |
-| `install` event         | ✅ | 🚫 | ❓ |
-| `activate` event        | ✅ | 🚫 | ❓ |
+| `fetch` event           | ✅ | ✅ | [👨‍💻][xb]{:.no-mark} |
+| `install` event         | ✅ | 🚫 | [❓][x6]{:.no-mark} |
+| `activate` event        | ✅ | 🚫 | [❓][x6]{:.no-mark} |
 | URL API                 | ✅ | [ℹ️][x5]{:.no-mark} | ✅ |
 | Fetch API               | ✅ | ✅ | ✅ |
 | Abort Controller        | ✅ | [👨‍💻][x1]{:.no-mark} | ✅ |
@@ -125,6 +125,7 @@ Implementations of other browser APIs are necessary for bridging the gap between
 [x9]: https://github.com/worker-tools/location-polyfill
 [x0]: https://caniuse.com/?search=text(en%7Cde)coderstream
 [xa]: https://developers.cloudflare.com/workers/learning/how-the-cache-works
+[xb]: https://github.com/worker-tools/deno-fetch-event-adapter
 
 
 ### Working Drafts
