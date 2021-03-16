@@ -19,7 +19,7 @@ buttons: >
 
 ## Origin
 
-Worker Environments are an **adaptation** of the [Service Workers API][1], which is a browser standard for offline web applications. To give web developers more freedom over offline experiences, the specification includes a (minimal) HTTP server. Since it was published, **other vendors have implemented this API** for servers that run in the cloud — or on the edge in the case of [Cloudflare Workers][cw].
+Worker Environments are an **adaptation** of the [Service Workers API][sw], which is a browser standard for offline web applications. To give web developers more freedom over offline experiences, the specification includes a (minimal) HTTP server. Since it was published, **other vendors have implemented this API** for servers that run in the cloud — or on the edge in the case of [Cloudflare Workers][cw].
 
 Typically, they also implement other browser APIs such as Fetch, Streams, and Web Cryptography, making their global scope similar to that of a Service Worker. We call them _Worker Environments_ or _Worker Contexts_. 
 
@@ -54,19 +54,21 @@ There is currently 1 (one) fully-featured Worker Environment and 1 (one) alterna
 
 [![Cloudflare Workers](assets/img/cfworkers.svg){:.fl style="max-width:23rem;margin: 1rem"}][cw]{:.no-mark title="Cloudflare Workers"}
 [![Deno Workers](assets/img/deno.svg){:.fl style="max-height:8rem"}][dn]{:.no-mark title="Deno"}
+[![Cloudworker](assets/img/cloudworker.png){:.fl style="max-height:8rem"}][dsc]{:.no-mark title="Cloudworker"}
+{:.break-layout}
 
 ***
 {:.clearfix}
 
 <br/>
 
-|                         | Service Workers | Cloudflare Workers | Deno |
-|:------------------------|:---------------:|:------------------:|:----:|
-| Deployment Domain       | Browser | Edge | Server |
-| Open Source             | ✅ | 🚫 | ✅ |
-| 1.0                     | ✅ | ✅ | 🔜 |
-{:.stretch-table}
+|                         | [Service Workers][sw] | [Cloudflare Workers][cw] | [Deno][dn] | [Cloudworker][dsc] | [cloudflare-<br/>worker-local](https://github.com/gja/cloudflare-worker-local) |
+|:------------------------|:---------------:|:------------------:|:----:|:-----------:|:-------------------------:|
+| Domain                  | Browser | Edge | Server | Testing, Dev | Testing, Dev |
+| Open Source             | ✅ | 🚫 | ✅ | ✅ | ✅ |
+| 1.0                     | ✅ | ✅ | 🔜 | [💀][c1]{:.no-mark} | ✅ |
 
+[c1]: https://github.com/dollarshaveclub/cloudworker#%EF%B8%8F-cloudworker-is-no-longer-actively-maintained-at-dollar-shave-club-if-youre-interested-in-volunteering-to-help-please-open-an-issue-%EF%B8%8F
 
 ### Legend
 
@@ -95,24 +97,23 @@ There is currently 1 (one) fully-featured Worker Environment and 1 (one) alterna
 The center piece of any Worker Environment is an implementation of the global `fetch` event. 
 Implementations of other browser APIs are necessary for bridging the gap between different worker environments.
 
-| API                     | Service Workers | Cloudflare Workers | Deno |
-|:------------------------|:---------------:|:------------------:|:----:|
-| `fetch` event           | ✅ | ✅ | [👨‍💻][xb]{:.no-mark} |
-| `install` event         | ✅ | 🚫 | [❓][x6]{:.no-mark} |
-| `activate` event        | ✅ | 🚫 | [❓][x6]{:.no-mark} |
-| URL API                 | ✅ | [ℹ️][x5]{:.no-mark} | ✅ |
-| Fetch API               | ✅ | ✅ | ✅ |
-| Abort Controller        | ✅ | [👨‍💻][x1]{:.no-mark} | ✅ |
-| Encoding API            | ✅ | ✅ | ✅ |
-| Streams API             | [ℹ️][x2]{:.no-mark} | [ℹ️][x4]{:.no-mark} | ✅ |
-| Encoding Streams        | [ℹ️][x0]{:.no-mark} | 🚫 | 🚫 |
-| Web Cryptography API    | ✅ | ✅ | [🔜][x8]{:.no-mark} |
-| Cache API               | ✅ | [ℹ️][xa]{:.no-mark} | 🚫 |
-| WebSockets              | ✅ | 🚫 | ✅ |
-| Location API            | ✅ | [👨‍💻][x9]{:.no-mark}️ | ✅ |
-| Timers                  | ✅ | ✅ | ✅ |
-| IndexedDB               | ✅ | 🚫 | [❓][x3]{:.no-mark} |
-{:.stretch-table}
+| API                     | Service Workers | Cloudflare Workers | Deno | Cloudworker | cloudflare-<br/>worker-local |
+|:------------------------|:---------------:|:------------------:|:----:|:-----------:|:-------------------------:|
+| `fetch` event           | ✅ | ✅ | [👨‍💻][xb]{:.no-mark} | ✅ | ✅ |
+| `install` event         | ✅ | 🚫 | [❓][x6]{:.no-mark} | 🚫 | 🚫 |
+| `activate` event        | ✅ | 🚫 | [❓][x6]{:.no-mark} | 🚫 | 🚫 |
+| URL API                 | ✅ | [ℹ️][x5]{:.no-mark} | ✅ | ✅ | ✅ |
+| Fetch API               | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Abort Controller        | ✅ | [👨‍💻][x1]{:.no-mark} | ✅ | [👨‍💻][x1]{:.no-mark} | [👨‍💻][x1]{:.no-mark} |
+| Encoding API            | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Streams API             | [ℹ️][x2]{:.no-mark} | [ℹ️][x4]{:.no-mark} | ✅ | ℹ️ | 🚫 |
+| Encoding Streams        | [ℹ️][x0]{:.no-mark} | 🚫 | 🚫 | 🚫 | 🚫 |
+| Web Cryptography API    | ✅ | ✅ | [🔜][x8]{:.no-mark} | ✅ | ✅ |
+| Cache API               | ✅ | [ℹ️][xa]{:.no-mark} | 🚫 | ℹ️ | ℹ️ |
+| WebSockets              | ✅ | 🚫 | ✅ | 🚫 | 🚫 |
+| Location API            | ✅ | [👨‍💻][x9]{:.no-mark}️ | ✅ | [👨‍💻][x9]{:.no-mark} | [👨‍💻][x9]{:.no-mark} |
+| Timers                  | ✅ | ✅ | ✅ | ✅ | ✅ |
+| IndexedDB               | ✅ | 🚫 | [❓][x3]{:.no-mark} | 🚫 | 🚫 |
 
 [x1]: https://github.com/mo/abortcontroller-polyfill
 [x2]: https://caniuse.com/streams
@@ -131,11 +132,10 @@ Implementations of other browser APIs are necessary for bridging the gap between
 ### Working Drafts
 The APIs below are either abandoned or do not have buy-in from major browser vendors. However, they can still be reasonable targets for 3rd party libraries, such as KV stores or cookie middleware.
 
-| API                     | Service Workers | Cloudflare Workers | Deno |
-|:------------------------|:---------------:|:------------------:|:----:|
-| KV Storage API          | [👨‍💻][w1]{:.no-mark} | [👨‍💻][w2]{:.no-mark} | [👨‍💻][w6]{:.no-mark} |
-| Cookie Store API        | [ℹ️][w3]{:.no-mark} | [👨‍💻][w4]{:.no-mark} | [👨‍💻][w4]{:.no-mark} |
-{:.stretch-table}
+| API                     | Service Workers | Cloudflare Workers | Deno | Cloudworker | cloudflare-<br/>worker-local |
+|:------------------------|:---------------:|:------------------:|:----:|:-----------:|:-------------------------:|
+| KV Storage API          | [👨‍💻][w1]{:.no-mark} | [👨‍💻][w2]{:.no-mark} | [👨‍💻][w6]{:.no-mark} | [👨‍💻][w2]{:.no-mark} | [👨‍💻][w2]{:.no-mark} |
+| Cookie Store API        | [ℹ️][w3]{:.no-mark} | [👨‍💻][w4]{:.no-mark} | [👨‍💻][w4]{:.no-mark} | [👨‍💻][w4]{:.no-mark} | [👨‍💻][w4]{:.no-mark} |
 
 [w1]: https://github.com/GoogleChromeLabs/kv-storage-polyfill
 [w2]: https://github.com/worker-tools/cloudflare-kv-storage
@@ -148,18 +148,19 @@ The APIs below are either abandoned or do not have buy-in from major browser ven
 ### Non-Standard APIs
 These are useful APIs provided by one or more Worker Environment that aren't on any standards track (including abandoned). 
 
-| API                     | Service Workers | Cloudflare Workers | Deno |
-|:------------------------|:---------------:|:------------------:|:----:|
-| [`scheduled` event][u1] | 🚫 | ✅ | 🚫 |
-| [HTMLRewriter][u2]      | 🚫 | ✅ | 🚫 |
-| [KV][u3]                | 🚫 | ✅ | 🚫 |
-| [Durable Objects][u4]   | 🚫 | ✅ | 🚫 |
-{:.stretch-table}
+| API                     | Service Workers | Cloudflare Workers | Deno | Cloudworker | cloudflare-<br/>worker-local |
+|:------------------------|:---------------:|:------------------:|:----:|:-----------:|:-------------------------:|
+| [`scheduled` event][u1] | 🚫 | ✅ | 🚫 | 🚫 | 🚫 |
+| [HTMLRewriter][u2]      | 🚫 | ✅ | 🚫 | 🚫 | 🚫 |
+| [KV][u3]                | 🚫 | ✅ | 🚫 | [ℹ️][u5]{:.no-mark} | [ℹ️][u6]{:.no-mark} |
+| [Durable Objects][u4]   | 🚫 | ✅ | 🚫 | 🚫 | 🚫 |
 
 [u1]: https://developers.cloudflare.com/workers/runtime-apis/scheduled-event
 [u2]: https://developers.cloudflare.com/workers/runtime-apis/html-rewriter
 [u3]: https://developers.cloudflare.com/workers/runtime-apis/kv
 [u4]: https://developers.cloudflare.com/workers/runtime-apis/durable-objects
+[u5]: https://github.com/dollarshaveclub/cloudworker#workers-kv
+[u6]: https://github.com/gja/cloudflare-worker-local#cloudflare-kv-store-emulation-using-minio-or-any-s3-compatible-service
 
 
 ### Frameworks
@@ -173,9 +174,10 @@ However, over at [**worker-tools.github.io**][wt]{:.external} we're building the
 Are you aware of any other Worker Environments available or in development? Did you find any inaccuracies in the tables above? Open a PR!
 
 
-[1]: https://w3c.github.io/ServiceWorker/
+[sw]: https://w3c.github.io/ServiceWorker/
 [cw]: https://workers.cloudflare.com
 [dn]: https://deno.land
+[dsc]: https://github.com/dollarshaveclub/cloudworker
 [wt]: https://worker-tools.github.io
 
 [^1]: Node and the browser have diverged due to a lack of browser APIs for many crucial components, including HTTP, streams, file access, and more more. A lot has changed since then. Standards have been written for all of these and more, often informed by the experience of using the node-equivalent.
@@ -192,6 +194,13 @@ Are you aware of any other Worker Environments available or in development? Did 
   dl.legend dd {
     margin: 0;
   }
+  table th:first-of-type {
+      width: 220px;
+  }
+  table th:not(:first-of-type) {
+      width: 180px;
+  }
+</style>
 </style>
 
 ***
