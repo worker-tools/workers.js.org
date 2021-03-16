@@ -65,8 +65,8 @@ There is currently 1 (one) fully-featured Worker Environment and 1 (one) alterna
 |                         | [Service Workers][sw] | [Cloudflare Workers][cw] | [Deno][dn] | [Cloudworker][dsc] | [cloudflare-<br/>worker-local](https://github.com/gja/cloudflare-worker-local) |
 |:------------------------|:---------------:|:------------------:|:----:|:-----------:|:-------------------------:|
 | Domain                  | Browser | Edge | Server | Testing, Dev | Testing, Dev |
-| Open Source             | ✅ | 🚫 | ✅ | ✅ | ✅ |
-| 1.0                     | ✅ | ✅ | 🔜 | [💀][c1]{:.no-mark} | ✅ |
+| Open Source             | ✅ | 🚫 | ✅ | ✅       | ✅ |
+| 1.0                     | ✅ | ✅ | 🔜 | [💀][c1] | ✅ |
 
 [c1]: https://github.com/dollarshaveclub/cloudworker#%EF%B8%8F-cloudworker-is-no-longer-actively-maintained-at-dollar-shave-club-if-youre-interested-in-volunteering-to-help-please-open-an-issue-%EF%B8%8F
 
@@ -99,21 +99,21 @@ Implementations of other browser APIs are necessary for bridging the gap between
 
 | API                     | Service Workers | Cloudflare Workers | Deno | Cloudworker | cloudflare-<br/>worker-local |
 |:------------------------|:---------------:|:------------------:|:----:|:-----------:|:-------------------------:|
-| `fetch` event           | ✅ | ✅ | [👨‍💻][xb]{:.no-mark} | ✅ | ✅ |
-| `install` event         | ✅ | 🚫 | [❓][x6]{:.no-mark} | 🚫 | 🚫 |
-| `activate` event        | ✅ | 🚫 | [❓][x6]{:.no-mark} | 🚫 | 🚫 |
-| URL API                 | ✅ | [ℹ️][x5]{:.no-mark} | ✅ | ✅ | ✅ |
-| Fetch API               | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Abort Controller        | ✅ | [👨‍💻][x1]{:.no-mark} | ✅ | [👨‍💻][x1]{:.no-mark} | [👨‍💻][x1]{:.no-mark} |
-| Encoding API            | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Streams API             | [ℹ️][x2]{:.no-mark} | [ℹ️][x4]{:.no-mark} | ✅ | ℹ️ | 🚫 |
-| Encoding Streams        | [ℹ️][x0]{:.no-mark} | 🚫 | 🚫 | 🚫 | 🚫 |
-| Web Cryptography API    | ✅ | ✅ | [🔜][x8]{:.no-mark} | ✅ | ✅ |
-| Cache API               | ✅ | [ℹ️][xa]{:.no-mark} | ❓ | ℹ️ | ℹ️ |
-| WebSockets              | ✅ | 🚫 | ✅ | 🚫 | 🚫 |
-| Location API            | ✅ | [👨‍💻][x9]{:.no-mark}️ | ✅ | [👨‍💻][x9]{:.no-mark} | [👨‍💻][x9]{:.no-mark} |
-| Timers                  | ✅ | ✅ | ✅ | ✅ | ✅ |
-| IndexedDB               | ✅ | 🚫 | [❓][x3]{:.no-mark} | 🚫 | 🚫 |
+| `fetch` event           | ✅       | ✅       | [👨‍💻][xb] | ✅       | ✅       |
+| `install` event         | ✅       | 🚫       | [❓][x6] | 🚫       | 🚫       |
+| `activate` event        | ✅       | 🚫       | [❓][x6] | 🚫       | 🚫       |
+| URL API                 | ✅       | [ℹ️][x5] | ✅       | ✅       | ✅       |
+| Fetch API               | ✅       | ✅       | ✅       | ✅       | ✅       |
+| Abort Controller        | ✅       | [👨‍💻][x1] | ✅       | [👨‍💻][x1] | [👨‍💻][x1] |
+| Encoding API            | ✅       | ✅       | ✅       | ✅       | ✅       |
+| Streams API             | [ℹ️][x2] | [ℹ️][x4] | ✅       | ℹ️       | 🚫       |
+| Encoding Streams        | [ℹ️][x0] | 🚫       | 🚫       | 🚫       | 🚫       |
+| Web Cryptography API    | ✅       | ✅       | [🔜][x8] | ✅       | ✅       |
+| Cache API               | ✅       | [ℹ️][xa] | ❓       | ℹ️       | ℹ️       |
+| WebSockets              | ✅       | 🚫       | ✅       | 🚫       | 🚫       |
+| Location API            | ✅       | [👨‍💻][x9]️ | ✅       | [👨‍💻][x9] | [👨‍💻][x9] |
+| Timers                  | ✅       | ✅       | ✅       | ✅       | ✅       |
+| IndexedDB               | ✅       | 🚫       | [❓][x3] | 🚫       | 🚫       |
 
 [x1]: https://github.com/mo/abortcontroller-polyfill
 [x2]: https://caniuse.com/streams
@@ -134,8 +134,8 @@ The APIs below are either abandoned or do not have buy-in from major browser ven
 
 | API                     | Service Workers | Cloudflare Workers | Deno | Cloudworker | cloudflare-<br/>worker-local |
 |:------------------------|:---------------:|:------------------:|:----:|:-----------:|:-------------------------:|
-| KV Storage API          | [👨‍💻][w1]{:.no-mark} | [👨‍💻][w2]{:.no-mark} | [👨‍💻][w6]{:.no-mark} | [👨‍💻][w2]{:.no-mark} | [👨‍💻][w2]{:.no-mark} |
-| Cookie Store API        | [ℹ️][w3]{:.no-mark} | [👨‍💻][w4]{:.no-mark} | [👨‍💻][w4]{:.no-mark} | [👨‍💻][w4]{:.no-mark} | [👨‍💻][w4]{:.no-mark} |
+| KV Storage API          | [👨‍💻][w1] | [👨‍💻][w2] | [👨‍💻][w6] | [👨‍💻][w2] | [👨‍💻][w2] |
+| Cookie Store API        | [ℹ️][w3] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] |
 
 [w1]: https://github.com/GoogleChromeLabs/kv-storage-polyfill
 [w2]: https://github.com/worker-tools/cloudflare-kv-storage
@@ -150,10 +150,10 @@ These are useful APIs provided by one or more Worker Environment that aren't on 
 
 | API                     | Service Workers | Cloudflare Workers | Deno | Cloudworker | cloudflare-<br/>worker-local |
 |:------------------------|:---------------:|:------------------:|:----:|:-----------:|:-------------------------:|
-| [`scheduled` event][u1] | 🚫 | ✅ | 🚫 | 🚫 | 🚫 |
-| [HTMLRewriter][u2]      | 🚫 | ✅ | 🚫 | 🚫 | 🚫 |
-| [KV][u3]                | 🚫 | ✅ | 🚫 | [ℹ️][u5]{:.no-mark} | [ℹ️][u6]{:.no-mark} |
-| [Durable Objects][u4]   | 🚫 | ✅ | 🚫 | 🚫 | 🚫 |
+| [`scheduled` event][u1] | 🚫 | ✅ | 🚫 | 🚫       | 🚫       |
+| [HTMLRewriter][u2]      | 🚫 | ✅ | 🚫 | 🚫       | 🚫       |
+| [KV][u3]                | 🚫 | ✅ | 🚫 | [ℹ️][u5] | [ℹ️][u6] |
+| [Durable Objects][u4]   | 🚫 | ✅ | 🚫 | 🚫       | 🚫       |
 
 [u1]: https://developers.cloudflare.com/workers/runtime-apis/scheduled-event
 [u2]: https://developers.cloudflare.com/workers/runtime-apis/html-rewriter
@@ -200,6 +200,7 @@ Are you aware of any other Worker Environments available or in development? Did 
   table th:not(:first-of-type) {
       width: 180px;
   }
+  table a::after { content: none!important; }
 </style>
 
 ***
