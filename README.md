@@ -42,6 +42,8 @@ Worker Environments fulfill the original promise of NodeJS: To use one language 
 
 This is good news for Frontend Developers in particular: The knowledge ac- and required for building offline web applications can now be applied to writing HTTP servers --- and so can [the tools][wt].
 
+[^1]: Node and the browser have diverged due to a lack of browser APIs for many crucial components, including HTTP, streams, file access, and more more. A lot has changed since then. Standards have been written for all of these and more, often informed by the experience of using the node-equivalent.
+
 
 ## State of Worker Environments
 
@@ -203,8 +205,6 @@ Taking this model to its logical conclusion, backends shrink to the size of API 
 [dn]: https://deno.land
 [dsc]: https://github.com/dollarshaveclub/cloudworker
 [wt]: https://worker-tools.github.io
-
-[^1]: Node and the browser have diverged due to a lack of browser APIs for many crucial components, including HTTP, streams, file access, and more more. A lot has changed since then. Standards have been written for all of these and more, often informed by the experience of using the node-equivalent.
 
 <style>
   dl.legend {
