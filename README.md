@@ -206,6 +206,7 @@ Taking this model to its logical conclusion, backends shrink to the size of API 
 [dsc]: https://github.com/dollarshaveclub/cloudworker
 [wt]: https://worker-tools.github.io
 
+<br/>
 <style>
   dl.legend {
     display: grid;
