@@ -109,7 +109,7 @@ Implementations of other browser APIs are necessary for bridging the gap between
 | Streams API             | [ℹ️][x2]{:.no-mark} | [ℹ️][x4]{:.no-mark} | ✅ | ℹ️ | 🚫 |
 | Encoding Streams        | [ℹ️][x0]{:.no-mark} | 🚫 | 🚫 | 🚫 | 🚫 |
 | Web Cryptography API    | ✅ | ✅ | [🔜][x8]{:.no-mark} | ✅ | ✅ |
-| Cache API               | ✅ | [ℹ️][xa]{:.no-mark} | 🚫 | ℹ️ | ℹ️ |
+| Cache API               | ✅ | [ℹ️][xa]{:.no-mark} | ❓ | ℹ️ | ℹ️ |
 | WebSockets              | ✅ | 🚫 | ✅ | 🚫 | 🚫 |
 | Location API            | ✅ | [👨‍💻][x9]{:.no-mark}️ | ✅ | [👨‍💻][x9]{:.no-mark} | [👨‍💻][x9]{:.no-mark} |
 | Timers                  | ✅ | ✅ | ✅ | ✅ | ✅ |
@@ -200,7 +200,6 @@ Are you aware of any other Worker Environments available or in development? Did 
   table th:not(:first-of-type) {
       width: 180px;
   }
-</style>
 </style>
 
 ***
