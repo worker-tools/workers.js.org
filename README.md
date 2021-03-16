@@ -8,7 +8,7 @@ logo: |
 description: >
   Worker Environments are the **new standard** for writing **HTTP servers** in JavaScript.
 buttons: >
-  [Get Started](#state-of-worker-environments){:.btn.btn-primary}
+  [Learn More](#state-of-worker-environments){:.btn.btn-primary}
   [Contribute](#contributing){:.btn.btn-default style="font-weight:normal"}
 ---
 
