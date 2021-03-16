@@ -173,35 +173,7 @@ However, over at [**worker-tools.github.io**][wt]{:.external} we're building the
 
 Are you aware of any other Worker Environments available or in development? Did you find any inaccuracies in the tables above? Open a PR!
 
-
-[sw]: https://w3c.github.io/ServiceWorker/
-[cw]: https://workers.cloudflare.com
-[dn]: https://deno.land
-[dsc]: https://github.com/dollarshaveclub/cloudworker
-[wt]: https://worker-tools.github.io
-
-[^1]: Node and the browser have diverged due to a lack of browser APIs for many crucial components, including HTTP, streams, file access, and more more. A lot has changed since then. Standards have been written for all of these and more, often informed by the experience of using the node-equivalent.
-
 <br/>
-
-<style>
-  dl.legend {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 36px minmax(min(300px, 100%), 1fr));
-    grid-gap: 0.5rem;
-  }
-
-  dl.legend dd {
-    margin: 0;
-  }
-  table th:first-of-type {
-      width: 220px;
-  }
-  table th:not(:first-of-type) {
-      width: 180px;
-  }
-  table a::after { content: none!important; }
-</style>
 
 ***
 
@@ -226,3 +198,29 @@ The model for the next decade: Edge Workers sit between Service Workers and 3rd 
 
 Taking this model to its logical conclusion, backends shrink to the size of API brokers. Scriptable Worker Environments are more than capable of playing that role.
 
+[sw]: https://w3c.github.io/ServiceWorker/
+[cw]: https://workers.cloudflare.com
+[dn]: https://deno.land
+[dsc]: https://github.com/dollarshaveclub/cloudworker
+[wt]: https://worker-tools.github.io
+
+[^1]: Node and the browser have diverged due to a lack of browser APIs for many crucial components, including HTTP, streams, file access, and more more. A lot has changed since then. Standards have been written for all of these and more, often informed by the experience of using the node-equivalent.
+
+<style>
+  dl.legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 36px minmax(min(300px, 100%), 1fr));
+    grid-gap: 0.5rem;
+  }
+
+  dl.legend dd {
+    margin: 0;
+  }
+  table th:first-of-type {
+      width: 220px;
+  }
+  table th:not(:first-of-type) {
+      width: 180px;
+  }
+  table a::after { content: none!important; }
+</style>
