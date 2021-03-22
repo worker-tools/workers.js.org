@@ -152,10 +152,10 @@ These are useful APIs provided by one or more Worker Environment that aren't on 
 
 | API                     | Service Workers | Cloudflare Workers | Deno | Cloudworker | cloudflare-<br/>worker-local |
 |:------------------------|:---------------:|:------------------:|:----:|:-----------:|:-------------------------:|
-| [`scheduled` event][u1] | 🚫 | ✅ | 🚫 | 🚫       | 🚫       |
-| [HTMLRewriter][u2]      | 🚫 | ✅ | 🚫 | 🚫       | 🚫       |
-| [KV][u3]                | 🚫 | ✅ | 🚫 | [ℹ️][u5] | [ℹ️][u6] |
-| [Durable Objects][u4]   | 🚫 | ✅ | 🚫 | 🚫       | 🚫       |
+| [`scheduled` event][u1] | 🚫       | ✅ | 🚫       | 🚫       | 🚫       |
+| [HTMLRewriter][u2]      | [👨‍💻][u7] | ✅ | [👨‍💻][u7] | [👨‍💻][u7] | [👨‍💻][u7] |
+| [KV][u3]                | 🚫       | ✅ | 🚫       | [ℹ️][u5] | [ℹ️][u6] |
+| [Durable Objects][u4]   | 🚫       | ✅ | 🚫       | 🚫       | 🚫       |
 
 [u1]: https://developers.cloudflare.com/workers/runtime-apis/scheduled-event
 [u2]: https://developers.cloudflare.com/workers/runtime-apis/html-rewriter
@@ -163,6 +163,7 @@ These are useful APIs provided by one or more Worker Environment that aren't on 
 [u4]: https://developers.cloudflare.com/workers/runtime-apis/durable-objects
 [u5]: https://github.com/dollarshaveclub/cloudworker#workers-kv
 [u6]: https://github.com/gja/cloudflare-worker-local#cloudflare-kv-store-emulation-using-minio-or-any-s3-compatible-service
+[u7]: https://github.com/worker-tools/parsed-html-rewriter
 
 
 ### Frameworks
