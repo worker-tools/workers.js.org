@@ -40,7 +40,7 @@ Minimal example of a server written in a Worker Environment.
 
 Worker Environments fulfill the original promise of NodeJS: To use one language and share code between client and server. In practice, this never came to be. Instead the worlds of node and browsers have diverged[^1]. Worker Environments are bringing them back together.  
 
-This is good news for Frontend Developers in particular: The knowledge ac- and required for building offline web applications can now be applied to writing HTTP servers --- and so can [the tools][wt].
+This is good news for Frontend Developers in particular: The knowledge ac- and required for building offline web applications can now be applied to writing HTTP servers --- and so can [the tools](#frameworks).
 
 [^1]: Node and the browser have diverged due to a lack of browser APIs for many crucial components, including HTTP, streams, file access, and more more. A lot has changed since then. Standards have been written for all of these and more, often informed by the experience of using the node-equivalent.
 
@@ -172,9 +172,13 @@ These are useful APIs provided by one or more Worker Environment that aren't on 
 
 ### Frameworks
 No HTTP Server is complete without a Web Framework for common tasks such as routing, sessions, authentication, and more. 
+Unfortunately, Worker Environments do not have a framework at the level of polish that is common in Node.js, yet.
 
-Worker Environments do not have a complete framework yet.
-However, over at [**worker-tools.github.io**][wt]{:.external} we're building the libraries and tools necessary for the first generation of Worker-based web frameworks.
+However, you can try [**cfworker/web**](https://github.com/cfworker/cfworker/blob/master/packages/web/README.md) which is a Web framework inspired by Koa and fastify.
+
+You can also check out [**worker-tools**][wt]{:.external}, a collection of tools and libraries that achieve many of the same goals as a web framework, built by yours truly.
+
+For more tools and libraries that work on Cloudflare Workers, check out [Works on Workers](https://workers.cloudflare.com/works).
 
 ## Contributing
 
