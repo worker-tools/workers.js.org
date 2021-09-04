@@ -113,10 +113,10 @@ Implementations of other browser APIs are necessary for bridging the gap between
 | Abort Controller        |  ✅      | [👨‍💻][x1] |  ✅      |  ✅      | [👨‍💻][x1] | [👨‍💻][x1] | [👨‍💻][x1] |
 | Encoding API            |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |
 | Streams API             | [ℹ️][x2] | [ℹ️][x4] |  ✅      |  ✅      |  ✅      |  ℹ️      |  🚫      |
-| Encoding Streams        | [ℹ️][x0] |  🚫      |  🚫      |  🚫      |  🚫      |  🚫      |  🚫      |
+| Encoding Streams        | [ℹ️][x0] |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |  🚫      |
 | Web Cryptography API    |  ✅      |  ✅      | [🔜][x8] | [🔜][x8] |  ✅      |  ✅      |  ✅      |
 | Cache API               |  ✅      | [ℹ️][xa] |  ❓      |  ❓      |  ✅      |  ℹ️      |  ℹ️      |
-| WebSockets              |  ✅      |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |  🚫      |
+| WebSockets              |  ✅      | [🔜][xc] |  ✅      |  ✅      |  🚫      |  🚫      |  🚫      |
 | Location API            |  ✅      | [👨‍💻][x9]️ |  ✅      |  ✅      | [👨‍💻][x9] | [👨‍💻][x9] | [👨‍💻][x9] |
 | Timers                  |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |
 | IndexedDB               |  ✅      |  🚫      | [❓][x3] | [❓][x3] |  🚫      |  🚫      |  🚫      |
@@ -133,6 +133,7 @@ Implementations of other browser APIs are necessary for bridging the gap between
 [x0]: https://caniuse.com/?search=text(en%7Cde)coderstream
 [xa]: https://developers.cloudflare.com/workers/learning/how-the-cache-works
 [xb]: https://github.com/worker-tools/deno-fetch-event-adapter
+[xc]: https://blog.cloudflare.com/introducing-workers-durable-objects/#can-durable-objects-serve-websockets
 
 
 ### Working Drafts
@@ -184,7 +185,7 @@ For more tools and libraries that work on Cloudflare Workers, check out [Works o
 
 Are you aware of any other Worker Environments available or in development? Did you find any inaccuracies in the tables above? Open a PR in the [workers.js.org repository](https://github.com/worker-tools/workers.js.org)!
 
-<br/>
+<!-- <br/>
 
 ***
 
@@ -207,7 +208,7 @@ How web services used to be written.
 The model for the next decade: Edge Workers sit between Service Workers and 3rd Party APIs.   
 {:.figcaption}
 
-Taking this model to its logical conclusion, backends shrink to the size of API brokers. Scriptable Worker Environments are more than capable of playing that role.
+Taking this model to its logical conclusion, backends shrink to the size of API brokers. Scriptable Worker Environments are more than capable of playing that role. -->
 
 [sw]: https://w3c.github.io/ServiceWorker/
 [cw]: https://workers.cloudflare.com
