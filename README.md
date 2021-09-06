@@ -47,7 +47,7 @@ This is good news for Frontend Developers in particular: The knowledge ac- and r
 
 ## State of Worker Environments
 
-There is currently 1 (one) fully-featured Worker Environment and 1 (one) alternative being implemented. There are 3 (three) offline testing and development implementations.
+There is currently one fully-featured Worker Environment and one alternative being implemented. There are four offline testing and development implementations.
 {:.note title="Summary"}
 
 [Cloudflare Workers][cw] is the most complete Worker Environment. It is currently the only one implementing the global `fetch` event, bringing it on par with Service Workers. However, [Deno][dn] is expected to [follow shortly][x6].
