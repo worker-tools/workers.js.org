@@ -57,6 +57,7 @@ There is currently 1 (one) fully-featured Worker Environment and 1 (one) alterna
 [![Cloudflare Workers](assets/img/cfworkers.svg){:.fl style="max-width:22.5rem;margin-top: 1rem"}][cw]{:.no-mark title="Cloudflare Workers"}
 [![Deno CLI](assets/img/deno.svg){:.fl style="max-height:8rem"}][dn]{:.no-mark title="Deno CLI"}
 [![Deno Deploy](assets/img/deno-deploy.png){:.fl style="max-height:6.5rem;margin:.75rem"}][dnd]{:.no-mark title="Deno Deploy"}
+[![Miniflare](assets/img/miniflare.png){:.fl style="max-height:6.5rem;margin-top:.75rem"}][mfl]{:.no-mark title="Miniflare"}
 [![cfworker/dev](assets/img/cfworkerdev.png){:.fl style="max-height:6rem; margin:1rem"}][cdv]{:.no-mark title="cfworker/dev"}
 [![Cloudworker](assets/img/cloudworker.png){:.fl style="max-height:8rem"}][dsc]{:.no-mark title="Cloudworker"}
 {:.break-layout}
@@ -66,15 +67,17 @@ There is currently 1 (one) fully-featured Worker Environment and 1 (one) alterna
 
 <br/>
 
-|                         | [Service Workers][sw] | [Cloudflare Workers][cw] | [Deno CLI][dn] | [Deno Deploy][dnd] | [cfworker/dev][cdv] | [Cloudworker][dsc] | [cloudflare-<br/>worker-local][wlc] |
-|:------------------------|:---------------------:|:------------------------:|:----------:|:------------------:|:-------------------:|:------------------:|:-----------------------------------:|
-| Domain                  | Browser | Edge | Server | Edge | Testing, Dev | Testing, Dev | Testing, Dev |
-| Open Source             | ✅ | 🚫 | ✅ |  ✅      | ✅ | ✅       | ✅ |
-| 1.0                     | ✅ | ✅ | ✅ | [🚫][c2] | ✅ | [💀][c1] | ✅ |
+|                         | [Service Workers][sw] | [Cloudflare Workers][cw] | [Deno CLI][dn] | [Deno Deploy][dnd] | [Miniflare][mfl] | [cfworker/dev][cdv] | [Cloudworker][dsc] | [cloudflare-<br/>worker-local][wlc] |
+|:------------------------|:---------------------:|:------------------------:|:--------------:|:------------------:|:----------------:|:-------------------:|:------------------:|:-----------------------------------:|
+| Domain                  | Browser               | Edge                     | Server         | Edge               | Testing, Dev     | Testing, Dev        | Testing, Dev       | Testing, Dev                        |
+| Open Source             | ✅ | 🚫 | ✅ | [ℹ️][c2] | ✅ | ✅ | ✅       | ✅ |
+| 1.0                     | ✅ | ✅ | ✅ | [🚫][c2] | ✅ | ✅ | [💀][c1] | ✅ |
 
 [c1]: https://github.com/dollarshaveclub/cloudworker#%EF%B8%8F-cloudworker-is-no-longer-actively-maintained-at-dollar-shave-club-if-youre-interested-in-volunteering-to-help-please-open-an-issue-%EF%B8%8F
 [c2]: https://deno.com/deploy
+
 [dnd]: https://deno.com/deploy
+[mfl]: https://miniflare.dev
 
 ### Legend
 
@@ -103,23 +106,23 @@ There is currently 1 (one) fully-featured Worker Environment and 1 (one) alterna
 The center piece of any Worker Environment is an implementation of the global `fetch` event. 
 Implementations of other browser APIs are necessary for bridging the gap between different worker environments.
 
-| API                     | Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy |  cfworker/dev | Cloudworker | cloudflare-<br/>worker-local |
-|:------------------------|:---------------:|:------------------:|:--------:|:-----------:|:-------------:|:-----------:|:----------------------------:|
-| `fetch` event           |  ✅      |  ✅      | [👨‍💻][xb] |  ✅      |  ✅      |  ✅      |  ✅      |
-| `install` event         |  ✅      |  🚫      | [❓][x6] | [❓][x6] |  🚫      |  🚫      |  🚫      |
-| `activate` event        |  ✅      |  🚫      | [❓][x6] | [❓][x6] |  🚫      |  🚫      |  🚫      |
-| URL API                 |  ✅      | [ℹ️][x5] |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |
-| Fetch API               |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |
-| Abort Controller        |  ✅      | [👨‍💻][x1] |  ✅      |  ✅      | [👨‍💻][x1] | [👨‍💻][x1] | [👨‍💻][x1] |
-| Encoding API            |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |
-| Streams API             | [ℹ️][x2] | [ℹ️][x4] |  ✅      |  ✅      |  ✅      |  ℹ️      |  🚫      |
-| Encoding Streams        | [ℹ️][x0] |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |  🚫      |
-| Web Cryptography API    |  ✅      |  ✅      | [🔜][x8] | [🔜][x8] |  ✅      |  ✅      |  ✅      |
-| Cache API               |  ✅      | [ℹ️][xa] |  ❓      |  ❓      |  ✅      |  ℹ️      |  ℹ️      |
-| WebSockets              |  ✅      | [🔜][xc] |  ✅      |  ✅      |  🚫      |  🚫      |  🚫      |
-| Location API            |  ✅      | [👨‍💻][x9]️ |  ✅      |  ✅      | [👨‍💻][x9] | [👨‍💻][x9] | [👨‍💻][x9] |
-| Timers                  |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |
-| IndexedDB               |  ✅      |  🚫      | [❓][x3] | [❓][x3] |  🚫      |  🚫      |  🚫      |
+| API                     | Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Miniflare | cfworker/dev | Cloudworker | cloudflare-<br/>worker-local |
+|:------------------------|:---------------:|:------------------:|:--------:|:-----------:|:---------:|:------------:|:-----------:|:----------------------------:|
+| `fetch` event           |  ✅      |  ✅      | [👨‍💻][xb] |  ✅      |   ✅       |  ✅      |  ✅      |  ✅      |
+| `install` event         |  ✅      |  🚫      | [❓][x6] | [❓][x6] |   🚫       |  🚫      |  🚫      |  🚫      |
+| `activate` event        |  ✅      |  🚫      | [❓][x6] | [❓][x6] |   🚫       |  🚫      |  🚫      |  🚫      |
+| URL API                 |  ✅      | [ℹ️][x5] |  ✅      |  ✅      |   ✅       |  ✅      |  ✅      |  ✅      |
+| Fetch API               |  ✅      |  ✅      |  ✅      |  ✅      |   ✅       |  ✅      |  ✅      |  ✅      |
+| Abort Controller        |  ✅      | [👨‍💻][x1] |  ✅      |  ✅      |  [👨‍💻][x1]  | [👨‍💻][x1] | [👨‍💻][x1] | [👨‍💻][x1] |
+| Encoding API            |  ✅      |  ✅      |  ✅      |  ✅      |   ✅       |  ✅      |  ✅      |  ✅      |
+| Streams API             | [ℹ️][x2] | [ℹ️][x4] |  ✅      |  ✅      |   ✅       |  ✅      |  ℹ️      |  🚫      |
+| Encoding Streams        | [ℹ️][x0] |  🚫      |  ✅      |  ✅      |   🚫       |  🚫      |  🚫      |  🚫      |
+| Web Cryptography API    |  ✅      |  ✅      | [🔜][x8] | [🔜][x8] |   ✅       |  ✅      |  ✅      |  ✅      |
+| Cache API               |  ✅      | [ℹ️][xa] |  ❓      |  ❓      |  [ℹ️][xd]  |  ✅      |  ℹ️      |  ℹ️      |
+| WebSockets              |  ✅      | [🔜][xc] |  ✅      |  ✅      |  [ℹ️][xe]  |  🚫      |  🚫      |  🚫      |
+| Location API            |  ✅      | [👨‍💻][x9]️ |  ✅      |  ✅      |  [👨‍💻][x9]️  | [👨‍💻][x9] | [👨‍💻][x9] | [👨‍💻][x9] |
+| Timers                  |  ✅      |  ✅      |  ✅      |  ✅      |   ✅       |  ✅      |  ✅      |  ✅      |
+| IndexedDB               |  ✅      |  🚫      | [❓][x3] | [❓][x3] |   🚫       |  🚫      |  🚫      |  🚫      |
 
 [x1]: https://github.com/mo/abortcontroller-polyfill
 [x2]: https://caniuse.com/streams
@@ -134,15 +137,17 @@ Implementations of other browser APIs are necessary for bridging the gap between
 [xa]: https://developers.cloudflare.com/workers/learning/how-the-cache-works
 [xb]: https://github.com/worker-tools/deno-fetch-event-adapter
 [xc]: https://blog.cloudflare.com/introducing-workers-durable-objects/#can-durable-objects-serve-websockets
+[xd]: https://miniflare.dev/cache.html
+[xe]: https://miniflare.dev/web-sockets.html
 
 
 ### Working Drafts
 The APIs below are either abandoned or do not have buy-in from major browser vendors. However, they can still be reasonable targets for 3rd party libraries, such as KV stores or cookie middleware.
 
-| API                     | Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy |  cfworker/dev | Cloudworker | cloudflare-<br/>worker-local |
-|:------------------------|:---------------:|:------------------:|:--------:|:-----------:|:-------------:|:-----------:|:----------------------------:|
-| KV Storage API          | [👨‍💻][w1] | [👨‍💻][w2] | [👨‍💻][w6] | [👨‍💻][w6] | [👨‍💻][w6] | [👨‍💻][w2] | [👨‍💻][w2] |
-| Cookie Store API        | [ℹ️][w3] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] |
+| API                     | Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Miniflare | cfworker/dev | Cloudworker | cloudflare-<br/>worker-local |
+|:------------------------|:---------------:|:------------------:|:--------:|:-----------:|:---------:|:------------:|:-----------:|:----------------------------:|
+| KV Storage API          | [👨‍💻][w1] | [👨‍💻][w2] | [👨‍💻][w6] | [👨‍💻][w6] | [👨‍💻][w2] | [👨‍💻][w6] | [👨‍💻][w2] | [👨‍💻][w2] |
+| Cookie Store API        | [ℹ️][w3] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] |
 
 [w1]: https://github.com/GoogleChromeLabs/kv-storage-polyfill
 [w2]: https://github.com/worker-tools/cloudflare-kv-storage
@@ -155,12 +160,12 @@ The APIs below are either abandoned or do not have buy-in from major browser ven
 ### Non-Standard APIs
 These are useful APIs provided by one or more Worker Environment that aren't on any standards track (including abandoned). 
 
-| API                     | Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy |  cfworker/dev | Cloudworker | cloudflare-<br/>worker-local |
-|:------------------------|:---------------:|:------------------:|:--------:|:-----------:|:-------------:|:-----------:|:----------------------------:|
-| [`scheduled` event][u1] | 🚫       | ✅ | 🚫       | 🚫       | 🚫 | 🚫       | 🚫       |
-| [HTMLRewriter][u2]      | [👨‍💻][u7] | ✅ | [👨‍💻][u7] | [👨‍💻][u7] | ✅ | [👨‍💻][u7] | [👨‍💻][u7] |
-| [KV][u3]                | 🚫       | ✅ | 🚫       | 🚫       | ✅ | [ℹ️][u5] | [ℹ️][u6] |
-| [Durable Objects][u4]   | 🚫       | 🔜 | 🚫       | 🚫       | 🚫 | 🚫       | 🚫       |
+| API                     | Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Miniflare | cfworker/dev | Cloudworker | cloudflare-<br/>worker-local |
+|:------------------------|:---------------:|:------------------:|:--------:|:-----------:|:---------:|:------------:|:-----------:|:----------------------------:|
+| [`scheduled` event][u1] | 🚫       | ✅ | 🚫       | 🚫       |  ✅      | 🚫 | 🚫       | 🚫       |
+| [HTMLRewriter][u2]      | [👨‍💻][u7] | ✅ | [👨‍💻][u7] | [👨‍💻][u7] | [ℹ️][u8] | ✅ | [👨‍💻][u7] | [👨‍💻][u7] |
+| [KV][u3]                | 🚫       | ✅ | 🚫       | 🚫       |  ✅      | ✅ | [ℹ️][u5] | [ℹ️][u6] |
+| [Durable Objects][u4]   | 🚫       | 🔜 | 🚫       | 🚫       |  ✅      | 🚫 | 🚫       | 🚫       |
 
 [u1]: https://developers.cloudflare.com/workers/runtime-apis/scheduled-event
 [u2]: https://developers.cloudflare.com/workers/runtime-apis/html-rewriter
@@ -169,13 +174,14 @@ These are useful APIs provided by one or more Worker Environment that aren't on 
 [u5]: https://github.com/dollarshaveclub/cloudworker#workers-kv
 [u6]: https://github.com/gja/cloudflare-worker-local#cloudflare-kv-store-emulation-using-minio-or-any-s3-compatible-service
 [u7]: https://github.com/worker-tools/parsed-html-rewriter
+[u8]: https://github.com/mrbbot/html-rewriter-wasm#caveats
 
 
 ### Frameworks
 No HTTP Server is complete without a Web Framework for common tasks such as routing, sessions, authentication, and more. 
 Unfortunately, Worker Environments do not have a framework at the level of polish that is common in Node.js, yet.
 
-However, you can try [**cfworker/web**](https://github.com/cfworker/cfworker/blob/master/packages/web/README.md) which is a Web framework inspired by Koa and fastify.
+However, you can try [**cfworker/web**](https://github.com/cfworker/cfworker/blob/main/packages/web/README.md) which is a Web framework inspired by Koa and fastify.
 
 You can also check out [**worker-tools**][wt]{:.external}, a collection of tools and libraries that achieve many of the same goals as a web framework, built by yours truly.
 
@@ -216,7 +222,7 @@ Taking this model to its logical conclusion, backends shrink to the size of API 
 [dsc]: https://github.com/dollarshaveclub/cloudworker
 [wt]: https://worker-tools.github.io
 [wlc]: https://github.com/gja/cloudflare-worker-local
-[cdv]: https://github.com/cfworker/cfworker/tree/master/packages/dev
+[cdv]: https://github.com/cfworker/cfworker/tree/main/packages/dev
 
 <br/>
 <style>
