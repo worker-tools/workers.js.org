@@ -113,15 +113,19 @@ Implementations of other browser APIs are necessary for bridging the gap between
 | `activate` event        |  ✅      |  🚫      | [❓][x6] | [❓][x6] |   🚫       |  🚫      |  🚫      |  🚫      |
 | URL API                 |  ✅      | [ℹ️][x5] |  ✅      |  ✅      |   ✅       |  ✅      |  ✅      |  ✅      |
 | Fetch API               |  ✅      |  ✅      |  ✅      |  ✅      |   ✅       |  ✅      |  ✅      |  ✅      |
-| Abort Controller        |  ✅      | [👨‍💻][x1] |  ✅      |  ✅      |  [👨‍💻][x1]  | [👨‍💻][x1] | [👨‍💻][x1] | [👨‍💻][x1] |
+| Abort Controller        |  ✅      |  ✅      |  ✅      |  ✅      |  ✅        | [👨‍💻][x1] | [👨‍💻][x1] | [👨‍💻][x1] |
+| URL Pattern API         | [ℹ️][xf] | [👨‍💻][xh] |  ✅      |  ✅      |   ✅       |  ❓      |  ❓      |  ❓      |
 | Encoding API            |  ✅      |  ✅      |  ✅      |  ✅      |   ✅       |  ✅      |  ✅      |  ✅      |
 | Streams API             | [ℹ️][x2] | [ℹ️][x4] |  ✅      |  ✅      |   ✅       |  ✅      |  ℹ️      |  🚫      |
 | Encoding Streams        | [ℹ️][x0] |  🚫      |  ✅      |  ✅      |   🚫       |  🚫      |  🚫      |  🚫      |
 | Web Cryptography API    |  ✅      |  ✅      | [🔜][x8] | [🔜][x8] |   ✅       |  ✅      |  ✅      |  ✅      |
+| `crypto.randomUUID()`   | [ℹ️][xg] |  ✅      |  ✅      |  ✅      |   ✅       |  ❓      |  ❓      |  ❓      |
 | Cache API               |  ✅      | [ℹ️][xa] |  ❓      |  ❓      |  [ℹ️][xd]  |  ✅      |  ℹ️      |  ℹ️      |
-| WebSockets              |  ✅      | [🔜][xc] |  ✅      |  ✅      |  [ℹ️][xe]  |  🚫      |  🚫      |  🚫      |
+| Web Sockets API         |  ✅      | [ℹ️][xc] |  ✅      |  ✅      |  [ℹ️][xe]  |  🚫      |  🚫      |  🚫      |
 | Location API            |  ✅      | [👨‍💻][x9]️ |  ✅      |  ✅      |  [👨‍💻][x9]️  | [👨‍💻][x9] | [👨‍💻][x9] | [👨‍💻][x9] |
 | Timers                  |  ✅      |  ✅      |  ✅      |  ✅      |   ✅       |  ✅      |  ✅      |  ✅      |
+| `queueMicrotask`        |  ℹ️      |  ✅      |  ✅      |  ✅      |   ✅       |  ❓      |  ❓      |  ❓      |
+| `structuredClone`       |  ℹ️      |  ✅      |  ✅      |  ✅      |   ✅       |  ❓      |  ❓      |  ❓      | 
 | IndexedDB               |  ✅      |  🚫      | [❓][x3] | [❓][x3] |   🚫       |  🚫      |  🚫      |  🚫      |
 
 [x1]: https://github.com/mo/abortcontroller-polyfill
@@ -139,6 +143,9 @@ Implementations of other browser APIs are necessary for bridging the gap between
 [xc]: https://blog.cloudflare.com/introducing-workers-durable-objects/#can-durable-objects-serve-websockets
 [xd]: https://miniflare.dev/cache.html
 [xe]: https://miniflare.dev/web-sockets.html
+[xf]: https://caniuse.com/mdn-api_urlpattern
+[xg]: https://caniuse.com/mdn-api_crypto_randomuuid
+[xh]: https://github.com/kenchris/urlpattern-polyfill
 
 
 ### Working Drafts
@@ -165,7 +172,7 @@ These are useful APIs provided by one or more Worker Environment that aren't on 
 | [`scheduled` event][u1] | 🚫       | ✅ | 🚫       | 🚫       |  ✅      | 🚫 | 🚫       | 🚫       |
 | [HTMLRewriter][u2]      | [👨‍💻][u7] | ✅ | [👨‍💻][u7] | [👨‍💻][u7] | [ℹ️][u8] | ✅ | [👨‍💻][u7] | [👨‍💻][u7] |
 | [KV][u3]                | 🚫       | ✅ | 🚫       | 🚫       |  ✅      | ✅ | [ℹ️][u5] | [ℹ️][u6] |
-| [Durable Objects][u4]   | 🚫       | 🔜 | 🚫       | 🚫       |  ✅      | 🚫 | 🚫       | 🚫       |
+| [Durable Objects][u4]   | 🚫       | ✅ | 🚫       | 🚫       |  ✅      | 🚫 | 🚫       | 🚫       |
 
 [u1]: https://developers.cloudflare.com/workers/runtime-apis/scheduled-event
 [u2]: https://developers.cloudflare.com/workers/runtime-apis/html-rewriter

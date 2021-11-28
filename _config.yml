@@ -8,7 +8,7 @@ tagline:               The new standard for web servers
 description:           >
   Worker Environments are the new standard for writing HTTP servers in JavaScript.
 
-clap_button:           true
+clap_button:           false
 
 logo:                  assets/img/logo_l.svg
 favicon:               assets/img/logo.svg
