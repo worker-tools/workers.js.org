@@ -109,8 +109,8 @@ Implementations of other browser APIs are necessary for bridging the gap between
 | API                     | Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Miniflare | cfworker/dev | Cloudworker | cloudflare-<br/>worker-local |
 |:------------------------|:---------------:|:------------------:|:--------:|:-----------:|:---------:|:------------:|:-----------:|:----------------------------:|
 | `fetch` event           |  ✅      |  ✅      | [👨‍💻][xb] |  ✅      |   ✅       |  ✅      |  ✅      |  ✅      |
-| `install` event         |  ✅      |  🚫      | [❓][x6] | [❓][x6] |   🚫       |  🚫      |  🚫      |  🚫      |
-| `activate` event        |  ✅      |  🚫      | [❓][x6] | [❓][x6] |   🚫       |  🚫      |  🚫      |  🚫      |
+| `install` event         |  ✅      |  🚫      |  🚫      |  🚫      |   🚫       |  🚫      |  🚫      |  🚫      |
+| `activate` event        |  ✅      |  🚫      |  🚫      |  🚫      |   🚫       |  🚫      |  🚫      |  🚫      |
 | URL API                 |  ✅      | [ℹ️][x5] |  ✅      |  ✅      |   ✅       |  ✅      |  ✅      |  ✅      |
 | Fetch API               |  ✅      |  ✅      |  ✅      |  ✅      |   ✅       |  ✅      |  ✅      |  ✅      |
 | Abort Controller        |  ✅      |  ✅      |  ✅      |  ✅      |  ✅        | [👨‍💻][x1] | [👨‍💻][x1] | [👨‍💻][x1] |
@@ -118,7 +118,7 @@ Implementations of other browser APIs are necessary for bridging the gap between
 | Encoding API            |  ✅      |  ✅      |  ✅      |  ✅      |   ✅       |  ✅      |  ✅      |  ✅      |
 | Streams API             | [ℹ️][x2] | [ℹ️][x4] |  ✅      |  ✅      |   ✅       |  ✅      |  ℹ️      |  🚫      |
 | Encoding Streams        | [ℹ️][x0] |  🚫      |  ✅      |  ✅      |   🚫       |  🚫      |  🚫      |  🚫      |
-| Web Cryptography API    |  ✅      |  ✅      | [🔜][x8] | [🔜][x8] |   ✅       |  ✅      |  ✅      |  ✅      |
+| Web Cryptography API    |  ✅      |  ✅      |  ✅      |  ✅      |   ✅       |  ✅      |  ✅      |  ✅      |
 | `crypto.randomUUID()`   | [ℹ️][xg] |  ✅      |  ✅      |  ✅      |   ✅       |  ❓      |  ❓      |  ❓      |
 | Cache API               |  ✅      | [ℹ️][xa] |  ❓      |  ❓      |  [ℹ️][xd]  |  ✅      |  ℹ️      |  ℹ️      |
 | Web Sockets API         |  ✅      | [ℹ️][xc] |  ✅      |  ✅      |  [ℹ️][xe]  |  🚫      |  🚫      |  🚫      |
