@@ -191,7 +191,7 @@ Unfortunately, Worker Environments do not have a framework at the level of polis
 
 However, you can try [**cfworker/web**](https://github.com/cfworker/cfworker/blob/main/packages/web/README.md) which is a Web framework inspired by Koa and fastify.
 
-You can also check out [**worker-tools**][wt]{:.external}, a collection of tools and libraries that achieve many of the same goals as a web framework, built by yours truly.
+You can also check out [**Worker Tools**][wt]{:.external}, a collection of tools and libraries that achieve many of the same goals as a web framework, built by yours truly.
 
 For more tools and libraries that work on Cloudflare Workers, check out [Works on Workers](https://workers.cloudflare.com/works).
 
