@@ -11,7 +11,7 @@ description:           >
 clap_button:           false
 
 logo:                  assets/img/logo_l.svg
-favicon:               assets/img/logo.svg
+favicon:               favicon.ico
 apple_touch_icon:      assets/img/logo.svg
 
 author:
