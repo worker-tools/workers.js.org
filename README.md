@@ -116,7 +116,7 @@ Implementations of other browser APIs are necessary for bridging the gap between
 | Abort Controller        |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      | [👨‍💻][x1] | [👨‍💻][x1] |
 | URL Pattern API         | [ℹ️][xf] | [👨‍💻][xh] |  ✅      |  ✅      | [👨‍💻][xh] |  ❓      |  ❓      |
 | Encoding API            |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |
-| Streams API             | [ℹ️][x2] | [ℹ️][x4] |  ✅      |  ✅      |  ✅      |  ✅      |  🚫      |
+| Streams API             | [ℹ️][x2] | [ℹ️][x4] |  ✅      |  ✅      | [ℹ️][x4] |  ❓      |  🚫      |
 | Encoding Streams        | [ℹ️][x0] |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |  🚫      |
 | Web Cryptography API    |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |
 | `crypto.randomUUID()`   | [ℹ️][xg] |  ✅      |  ✅      |  ✅      |  ✅      |  ❓      |  ❓      |
