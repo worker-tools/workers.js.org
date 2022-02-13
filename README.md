@@ -127,9 +127,13 @@ Implementations of other browser APIs are necessary for bridging the gap between
 | `structuredClone`       |  ℹ️      |  ✅      |  ✅      |  ✅      |  ✅      |  ❓      |  ❓      | 
 | IndexedDB               |  ✅      |  🚫      | [❓][x3] | [❓][x3] |  🚫      |  🚫      |  🚫      |
 | Event Target            |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ❓      |  ❓      |
-| Broadcast Channel       | [ℹ️][xj] |  🚫      |  🚫      | [ℹ️][xk] |  🚫      |  🚫      |  🚫      |
+| Message Channel         |  ℹ️      |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |  🚫      |
+| Broadcast Channel       | [ℹ️][xj] |  🚫      | [🔜][xl] | [ℹ️][xk] |  🚫      |  🚫      |  🚫      |
+| [Web Socket Stream][wss]|  ❓      |  ❓      | [🔜][xm] |  ❓      |  ❓      |  🚫      |  🚫      |
 |:------------------------|:---------------:|:------------------:|:--------:|:-----------:|:---------:|:------------:|:----------------------------:|
 |                         | Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Miniflare | cfworker/dev | cloudflare-<br/>worker-local |
+
+[wss]: https://web.dev/websocketstream/
 
 [x1]: https://github.com/mo/abortcontroller-polyfill
 [x2]: https://caniuse.com/streams
@@ -152,6 +156,8 @@ Implementations of other browser APIs are necessary for bridging the gap between
 [xi]: https://developers.cloudflare.com/workers/learning/migrating-to-module-workers#migrating-a-simple-worker
 [xj]: https://caniuse.com/broadcastchannel
 [xk]: https://deno.com/deploy/docs/runtime-broadcast-channel
+[xl]: https://github.com/denoland/deno/issues/13214#issuecomment-1002551857
+[xm]: https://doc.deno.land/deno/unstable/~/WebSocketStream
 
 
 ### Working Drafts
