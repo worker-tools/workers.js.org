@@ -44,7 +44,7 @@ Example of a minimal HTTP server using Service Workers API
 
 
 ## State of Worker Environments
-Last modified at: Feb 06 2022
+Last modified at: {{ page.last_modified_at | date:"%b %d %Y" }}
 {:.heading.post-date}
 
 There are currently two production quality Worker Environments. There are multiple offline, testing, and development implementations.
