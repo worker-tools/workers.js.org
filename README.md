@@ -130,7 +130,7 @@ Implementations of other browser APIs are necessary for bridging the gap between
 | IndexedDB               |  ✅      |  🚫      | [❓][x3] | [❓][x3] |  🚫      |  🚫      |  🚫      |
 | EventTarget and Event   |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ❓      |  ❓      |
 | Web Workers API         |  ✅      |  🚫      |  ✅      |  ✅      |  🚫      |  ❓      |  ❓      |
-| Message Channel         |  ℹ️      |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |  🚫      |
+| Message Channel         |  ✅      |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |  🚫      |
 | Broadcast Channel       | [ℹ️][xj] |  🚫      | [🔜][xl] | [ℹ️][xk] |  🚫      |  🚫      |  🚫      |
 |:------------------------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |                         | Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Miniflare | cfworker/dev | cloudflare-<br/>worker-local |
