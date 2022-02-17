@@ -117,7 +117,8 @@ Implementations of other browser APIs are necessary for bridging the gap between
 | URL Pattern API         | [ℹ️][xf] | [👨‍💻][xh] |  ✅      |  ✅      | [👨‍💻][xh] | [👨‍💻][xh] | [👨‍💻][xh] |
 | Encoding API            |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |
 | Streams API             | [ℹ️][x2] | [ℹ️][x4] |  ✅      |  ✅      | [ℹ️][x4] |  ℹ️      |  🚫      |
-| Encoding Streams        | [ℹ️][x0] |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |  🚫      |
+| Encoding Streams        | [ℹ️][x0] |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |  🚫      | 
+| Compression Streams API | [ℹ️][xo] |  🚫      |  ✅      |  ❓      |  🚫      |  🚫      |  🚫      |
 | Web Cryptography API    |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |
 | `crypto.randomUUID()`   | [ℹ️][xg] |  ✅      |  ✅      |  ✅      |  ✅      |  ❓      |  ❓      |
 | Cache API               |  ✅      | [ℹ️][xa] |  ❓      | [🔜][xn] | [ℹ️][xd] |  ✅      |  ℹ️      |
@@ -160,6 +161,7 @@ Implementations of other browser APIs are necessary for bridging the gap between
 [xl]: https://github.com/denoland/deno/issues/13214#issuecomment-1002551857
 [xm]: https://doc.deno.land/deno/unstable/~/WebSocketStream
 [xn]: https://deno.com/deploy/docs/runtime-api#future-support
+[xo]: https://caniuse.com/mdn-api_compressionstream
 
 
 ### Working Drafts
