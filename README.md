@@ -133,8 +133,7 @@ Implementations of other browser APIs are necessary for bridging the gap between
 | Broadcast Channel       | [ℹ️][xj] |  🚫      | [🔜][xl] | [ℹ️][xk] |  🚫      |  🚫      |  🚫      |
 | IndexedDB               |  ✅      |  🚫      | [❓][x3] | [❓][x3] |  🚫      |  🚫      |  🚫      |
 | Performance API         |  ✅      |  🚫      |  ✅      |  ✅      |   ❓      |  ❓      |  ❓      |
-|:------------------------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|                         | Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Miniflare | cfworker/dev | cloudflare-<br/>worker-local |
+{:.sticky-table}
 
 [wss]: https://web.dev/websocketstream/
 
