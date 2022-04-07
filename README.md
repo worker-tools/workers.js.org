@@ -53,11 +53,9 @@ There are currently two production quality Worker Environments. There are multip
 {:.note title="Summary"}
 
 
-[![Cloudflare Workers](assets/img/cfworkers.svg){:.fl style="max-width:22.5rem;margin-top: 1rem"}][cw]{:.no-mark title="Cloudflare Workers"}
-[![Deno Deploy](assets/img/deno-deploy.png){:.fl style="max-height:6.5rem;margin:.75rem"}][dd]{:.no-mark title="Deno Deploy"}
-[![Miniflare](assets/img/miniflare.png){:.fl style="max-height:6.5rem;margin-top:.75rem"}][mfl]{:.no-mark title="Miniflare"}
-[![cfworker/dev](assets/img/cfworkerdev.png){:.fl style="max-height:6rem; margin:1rem"}][cdv]{:.no-mark title="cfworker/dev"}
-{:.break-layout}
+[![Cloudflare Workers](assets/img/cfworkers.svg){:style="max-width:22.5rem;margin-top: 1rem"}][cw]{:.no-mark title="Cloudflare Workers"}
+[![Deno Deploy](assets/img/deno-deploy.png){:style="max-height:6.5rem;margin:.75rem"}][dd]{:.no-mark title="Deno Deploy"}
+[![Miniflare](assets/img/miniflare.png){:style="max-height:6.5rem;margin-top:.75rem"}][mfl]{:.no-mark title="Miniflare"}
 
 ***
 {:.clearfix}
