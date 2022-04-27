@@ -106,7 +106,7 @@ There are currently two production quality Worker Environments. There are multip
 The center piece of any Worker Environment is an implementation of the global `fetch` event. 
 Implementations of other browser APIs are necessary for bridging the gap between different worker environments.
 
-|                         | Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Miniflare | cfworker/dev | cloudflare-<br/>worker-local |
+|| Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Miniflare | cfworker/dev | cloudflare-<br/>worker-local |
 |:------------------------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | `fetch` event           |  ✅      | [🔙][xi] | [👨‍💻][xb] |  ❓      |  ✅      |  ✅      |  ✅      |
 | URL API                 |  ✅      | [ℹ️][x5] |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |
@@ -130,7 +130,7 @@ Implementations of other browser APIs are necessary for bridging the gap between
 | Message Channel         |  ✅      |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |  🚫      |
 | Broadcast Channel       | [ℹ️][xj] |  🚫      | [🔜][xl] | [ℹ️][xk] |  🚫      |  🚫      |  🚫      |
 | IndexedDB               |  ✅      |  🚫      | [❓][x3] | [❓][x3] |  🚫      |  🚫      |  🚫      |
-| Performance API         |  ✅      |  🚫      |  ✅      |  ✅      |   ❓      |  ❓      |  ❓      |
+| Performance API         |  ✅      |  🚫      |  ✅      |  ✅      |   ❓     |  ❓      |  ❓      |
 {:.sticky-table}
 
 [wss]: https://web.dev/websocketstream/
@@ -231,15 +231,16 @@ This is good news for Frontend Developers in particular: The knowledge acquired 
 
 [^1]: Node and the browser have diverged due to a lack of browser APIs for many crucial components, including HTTP, streams, file access, and more more. A lot has changed since then. Standards have been written for all of these and more, often informed by the experience of using the node-equivalent.
 
-### Frameworks
-No HTTP Server is complete without a Web Framework for common tasks such as routing, sessions, authentication, and more. 
-Unfortunately, Worker Environments do not have a framework at the level of polish that is common in Node.js, yet.
+[![Worker Tools Logo](./assets/img/tools.svg){:width="120" height="120"}][wt]{:.no-mark}
+{:.centered style="margin:3rem auto -3rem"}
 
-However, you can try [**cfworker/web**](https://github.com/cfworker/cfworker/blob/main/packages/web/README.md) which is a Web framework inspired by Koa and fastify.
+## Tools
 
-You can also check out [**Worker Tools**][wt]{:.external}, a collection of tools and libraries that achieve many of the same goals as a web framework, built by yours truly.
+No HTTP Server is complete without a web framework for common tasks such as routing, sessions, authentication, and more. 
+<!-- Unfortunately, Worker Environments do not have a framework at the level of polish that is common in Node.js, yet. -->
 
-For more tools and libraries that work on Cloudflare Workers, check out [Works on Workers](https://workers.cloudflare.com/works).
+[__Worker Tools__][wt] is a collection of tools and libraries for writing web servers, built specifically for Worker Environments.
+They can be used independently, or as a complete framework via [Worker Tools / Shed][wts].
 
 ## Contributing
 
@@ -252,6 +253,7 @@ Are you aware of any other Worker Environments available or in development? Did 
 [dn]: https://deno.land
 [dsc]: https://github.com/dollarshaveclub/cloudworker
 [wt]: https://workers.tools/
+[wts]: https://workers.tools/shed
 [wlc]: https://github.com/gja/cloudflare-worker-local
 [cdv]: https://github.com/cfworker/cfworker/tree/main/packages/dev
 
