@@ -210,7 +210,7 @@ These are some general capabilities provided by one or more Worker Environment t
 [u4]: https://developers.cloudflare.com/workers/runtime-apis/durable-objects
 [u5]: https://github.com/dollarshaveclub/cloudworker#workers-kv
 [u6]: https://github.com/gja/cloudflare-worker-local#cloudflare-kv-store-emulation-using-minio-or-any-s3-compatible-service
-[u7]: https://github.com/worker-tools/parsed-html-rewriter
+[u7]: https://github.com/worker-tools/html-rewriter
 [u8]: https://github.com/mrbbot/html-rewriter-wasm#caveats
 [u9]: https://developers.cloudflare.com/workers/platform/changelog#2021-12-10
 [ua]: https://blog.cloudflare.com/introducing-socket-workers/
