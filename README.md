@@ -6,24 +6,24 @@ logo: |
     <img src="assets/img/logo_l.svg" alt="Logo" width="172" height="172">
   </picture>
 description: >
-  Worker Environments are the **new standard** for writing **HTTP servers** in JavaScript. 
+  Worker Runtimes are the **new standard** for writing **HTTP servers** in JavaScript. 
 buttons: >
-  [Learn More](#state-of-worker-environments){:.btn.btn-primary}
+  [Learn More](#state-of-worker-runtimes){:.btn.btn-primary}
   [Contribute](#contributing){:.btn.btn-default style="font-weight:normal"}
 ---
 
-# Worker Environments
+# Worker Runtimes
 
 * Table of Contents
 {:toc .large-only}
 
 ## Origin
 
-Worker Environments are an **adaptation** of the [Service Workers API][sw], which is a browser standard for offline web applications. To give web developers more freedom over offline experiences, the specification includes a (minimal) HTTP server. Since it was published, **other vendors have implemented this API** for servers that run in the cloud — or on the edge in the case of [Cloudflare Workers][cw].
+Worker Runtimes are an **adaptation** of the [Service Workers API][sw], which is a browser standard for offline web applications. To give web developers more freedom over offline experiences, the specification includes a (minimal) HTTP server. Since it was published, **other vendors have implemented this API** for servers that run in the cloud — or on the edge in the case of [Cloudflare Workers][cw].
 
-Typically, they also implement other browser APIs such as Fetch, Streams, and Web Cryptography, making their global scope similar to that of a Service Worker. We call them _Worker Environments_ or _Worker Contexts_. 
+Typically, they also implement other browser APIs such as Fetch, Streams, and Web Cryptography, making their global scope similar to that of a Service Worker. We call them _Worker Runtimes_ or _Worker Contexts_. 
 
-To see which vendors and APIs are available, check out the [State of Worker Environments](#state-of-worker-environments){:.heading} below. 
+To see which vendors and APIs are available, check out the [State of Worker Runtimes](#state-of-worker-runtimes){:.heading} below. 
 
 ```js
 self.addEventListener('fetch', event => {
@@ -43,11 +43,11 @@ Example of a minimal HTTP server using Service Workers API
 {:.note title="Deprecation Notice"}
 
 
-## State of Worker Environments
+## State of Worker Runtimes
 Last modified at: {{ page.last_modified_at | date:"%b %d %Y" }}
 {:.heading.post-date}
 
-There are currently two production quality Worker Environments. There are multiple offline, testing, and development implementations.
+There are currently two production quality Worker Runtimes. There are multiple offline, testing, and development implementations.
 [Cloudflare Workers][cw] was the first, and is the most battle-tested Worker Environment. 
 [Deno Deploy][dd] is a close second.
 {:.note title="Summary"}
@@ -104,7 +104,7 @@ There are currently two production quality Worker Environments. There are multip
 ### Browser APIs
 
 The center piece of any Worker Environment is an implementation of the global `fetch` event. 
-Implementations of other browser APIs are necessary for bridging the gap between different worker environments.
+Implementations of other browser APIs are necessary for bridging the gap between different worker runtimes.
 
 || Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Miniflare | cfworker/dev | cloudflare-<br/>worker-local |
 |:------------------------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
@@ -225,7 +225,7 @@ These are some general capabilities provided by one or more Worker Environment t
 
 
 ## Backend for Frontend
-Worker Environments fulfill the original promise of NodeJS: To use one language and share code between client and server. In practice, this never came to be. Instead the APIs of node and browsers have diverged[^1]. Worker Environments are bringing them back together.  
+Worker Runtimes fulfill the original promise of NodeJS: To use one language and share code between client and server. In practice, this never came to be. Instead the APIs of node and browsers have diverged[^1]. Worker Runtimes are bringing them back together.  
 
 This is good news for Frontend Developers in particular: The knowledge acquired for building (offline) web applications can now be applied to writing HTTP servers --- and so can the tools:
 
@@ -237,14 +237,14 @@ This is good news for Frontend Developers in particular: The knowledge acquired 
 ## Tools
 
 No HTTP Server is complete without a web framework for common tasks such as routing, sessions, authentication, and more. 
-<!-- Unfortunately, Worker Environments do not have a framework at the level of polish that is common in Node.js, yet. -->
+<!-- Unfortunately, Worker Runtimes do not have a framework at the level of polish that is common in Node.js, yet. -->
 
-[__Worker Tools__][wt] is a collection of tools and libraries for writing web servers, built specifically for Worker Environments.
+[__Worker Tools__][wt] is a collection of tools and libraries for writing web servers, built specifically for Worker Runtimes.
 They can be used independently, or as a complete framework via [Worker Tools / Shed][wts].
 
 ## Contributing
 
-Are you aware of any other Worker Environments available or in development? Did you find any inaccuracies in the tables above? Open a PR in the [workers.js.org repository](https://github.com/worker-tools/workers.js.org)!
+Are you aware of any other Worker Runtimes available or in development? Did you find any inaccuracies in the tables above? Open a PR in the [workers.js.org repository](https://github.com/worker-tools/workers.js.org)!
 
 
 [sw]: https://w3c.github.io/ServiceWorker/

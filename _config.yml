@@ -3,10 +3,10 @@ baseurl:               ''
 
 lang:                  en
 
-title:                 Worker Environments
+title:                 Worker Runtimes
 tagline:               The new standard for web servers
 description:           >
-  Worker Environments are the new standard for writing HTTP servers in JavaScript.
+  Worker Runtimes are the new standard for writing HTTP servers in JavaScript.
 
 clap_button:           false
 
@@ -22,7 +22,7 @@ author:
 
 # menu:
 #   - title:             State Of
-#     url:               /#state-of-worker-environments
+#     url:               /#state-of-worker-runtimes
 #   - title:             Contributing
 #     url:               /#contributing
 # legal:
