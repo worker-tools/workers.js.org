@@ -31,7 +31,7 @@ author:
 #   - title:             CHANGELOG
 #     url:              /CHANGELOG/
 
-copyright:             © 2022 Florian Klampfer <https://qwtel.com/>
+copyright:             © 2022 Florian Klampfer [qwtel.com](https://qwtel.com/)
 
 permalink:             /:categories/:year-:month-:day-:title/
 
@@ -115,7 +115,7 @@ hydejack:
   no_theme_color:      false
   use_lsi:             true
   cookies_banner:      false
-  advertise:           true
+  advertise:           false
   hide_dates:          false
   dark_mode:
     always:            false

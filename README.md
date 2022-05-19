@@ -240,7 +240,7 @@ No HTTP Server is complete without a web framework for common tasks such as rout
 <!-- Unfortunately, Worker Runtimes do not have a framework at the level of polish that is common in Node.js, yet. -->
 
 [__Worker Tools__][wt] is a collection of tools and libraries for writing web servers, built specifically for Worker Runtimes.
-They can be used independently, or as a complete framework via [Worker Tools / Shed][wts].
+They can be used independently, or as a complete framework via [__Shed__][wts].
 
 ## Contributing
 
