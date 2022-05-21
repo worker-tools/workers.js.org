@@ -23,5 +23,4 @@ jobs:
         with:
           token: ${{ secrets.GH_REPO_PAT }}
           target_branch: gh-pages
-          pre_build_commands: |
-            git config --global --add safe.directory '*'
+          pre_build_commands: "git config --global --add safe.directory '*'"
