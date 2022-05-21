@@ -11,16 +11,9 @@ jobs:
     name: Deploy
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/cache@v2
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
       - uses: helaili/jekyll-action@2.3.1
         env:
           BUNDLE_GITHUB__COM: x-access-token:${{ secrets.GH_REPO_PAT }}
         with:
           token: ${{ secrets.GH_REPO_PAT }}
           target_branch: gh-pages
-          pre_build_commands: "git config --global --add safe.directory '*'"
