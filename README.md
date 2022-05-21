@@ -201,7 +201,7 @@ These are some general capabilities provided by one or more Worker Environment t
 | File system access          |  🚫      |  🚫      |  ✅      | [ℹ️][uf] |  🚫      | 🚫 |  🚫      |
 | Connect TCP                 |  🚫      | [🔜][ua] | [✅][ub] | [✅][uc] | [🔜][ua] | 🚫 |  🚫      |
 | Connect UDP                 |  🚫      | [🔜][ua] | [🔜][ud] | [🔜][ud] | [🔜][ua] | 🚫 |  🚫      |
-| WebSockets (Server)         |  🚫      | [✅][uh] | [✅][ui] |  ❓      | [✅][uh] | 🚫 |  🚫      |
+| WebSockets (Server)         |  🚫      | [✅][uh] | [✅][ui] | [✅][ui] | [✅][uh] | 🚫 |  🚫      |
  
 
 [u1]: https://developers.cloudflare.com/workers/runtime-apis/scheduled-event
