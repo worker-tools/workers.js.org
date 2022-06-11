@@ -106,7 +106,7 @@ There are currently two production quality Worker Runtimes. There are multiple o
 The center piece of any Worker Environment is an implementation of the global `fetch` event. 
 Implementations of other browser APIs are necessary for bridging the gap between different worker runtimes.
 
-|| Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Fastly <small>Compute@Edge</small> | Miniflare | cfworker/dev | cloudflare-<br/>worker-local |
+|| Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Fastly C@E | Miniflare | cfworker/dev | cloudflare-<br/>worker-local |
 |:------------------------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | `fetch` event           |  ✅      | [🔙][xi] | [👨‍💻][xb] |  🚫      |  ✅      |  ✅      |  ✅      |  ✅      |
 | URL API                 |  ✅      | [ℹ️][x5] |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |
@@ -118,22 +118,22 @@ Implementations of other browser APIs are necessary for bridging the gap between
 | Encoding Streams        | [ℹ️][x0] |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |  🚫      |  🚫      | 
 | Compression Streams     | [ℹ️][xo] |  🚫      |  ✅      |  🚫      |  🚫      |  🚫      |  🚫      |  🚫      |
 | Web Cryptography API    |  ✅      |  ✅      |  ✅      |  ✅      |  ℹ️      |  ✅      |  ✅      |  ✅      |
-| `crypto.randomUUID()`   | [ℹ️][xg] |  ✅      |  ✅      |  ✅      |  ❓      |  ✅      |  ❓      |  ❓      |
-| Cache API               |  ✅      | [ℹ️][xa] |  ❓      | [🔜][xn] |  ❓      | [ℹ️][xd] |  ✅      |  ℹ️      |
-| WebSocket API           |  ✅      | [ℹ️][xc] |  ✅      |  ✅      |  ❓      | [ℹ️][xe] |  🚫      |  🚫      |
-| [Web Socket Stream][wss]|  ❓      |  ❓      | [🔜][xm] | [🔜][xm] |  ❓      |  ❓      |  🚫      |  🚫      |
-| Location API            |  ✅      | [👨‍💻][x9]️ |  ✅      |  ✅      |  ✅      | [👨‍💻][x9]️ | [👨‍💻][x9] | [👨‍💻][x9] |
-| `console`               |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |
+| `crypto.randomUUID()`   | [ℹ️][xg] |  ✅      |  ✅      |  ✅      |  🚫      |  ✅      |  ❓      |  ❓      |
+| Cache API               |  ✅      | [ℹ️][xa] |  ❓      | [🔜][xn] |  🚫      | [ℹ️][xd] |  ✅      |  ℹ️      |
+| WebSocket API           |  ✅      | [ℹ️][xc] |  ✅      |  ✅      |  🚫      | [ℹ️][xe] |  🚫      |  🚫      |
+| [Web Socket Stream][wss]|  ❓      |  ❓      | [🔜][xm] | [🔜][xm] |  🚫      |  ❓      |  🚫      |  🚫      |
+| Location API            |  ✅      | [👨‍💻][x9]️ |  ✅      |  🚫      |  ✅      | [👨‍💻][x9]️ | [👨‍💻][x9] | [👨‍💻][x9] |
+| `console`               |  ✅      |  ✅      |  ✅      |  ✅      | [ℹ️][xp] |  ✅      |  ✅      |  ✅      |
 | `queueMicrotask`        |  ℹ️      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ❓      |  ❓      |
 | `structuredClone`       |  ℹ️      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ❓      |  ❓      | 
-| `navigator.userAgent`   |  ✅      |  ✅      |  ✅      |  ✅      |  ❓      |  🔜      |  ❓      |  ❓      | 
-| `Response.json`         |  ℹ️      |  ✅      |  ✅      |  ✅      |  ❓      |  🔜      |  ❓      |  ❓      | 
+| `navigator.userAgent`   |  ✅      |  ✅      |  ✅      |  ✅      |  🚫      |  🔜      |  ❓      |  ❓      | 
+| `Response.json`         |  ℹ️      |  ✅      |  ✅      |  ✅      |  🚫      |  🔜      |  ❓      |  ❓      | 
 | EventTarget and Event   |  ✅      |  ✅      |  ✅      |  ✅      |  ❓      |  ✅      |  ❓      |  ❓      |
 | Web Workers API         |  ✅      |  🚫      |  ✅      |  🚫      |  🚫      |  🚫      |  ❓      |  ❓      |
 | Message Channel         |  ✅      |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |  🚫      |  🚫      |
 | Broadcast Channel       | [ℹ️][xj] |  🚫      | [🔜][xl] | [ℹ️][xk] |  🚫      |  🚫      |  🚫      |  🚫      |
 | IndexedDB               |  ✅      |  🚫      | [❓][x3] | [❓][x3] |  🚫      |  🚫      |  🚫      |  🚫      |
-| Performance API         |  ✅      |  🚫      |  ✅      |  ✅      |  ❓      |  ❓      |  ❓      |  ❓      |
+| Performance API         |  ✅      |  🚫      |  ✅      |  ✅      |  🚫      |  ❓      |  ❓      |  ❓      |
 {:.sticky-table}
 
 [wss]: https://web.dev/websocketstream/
@@ -163,12 +163,13 @@ Implementations of other browser APIs are necessary for bridging the gap between
 [xm]: https://doc.deno.land/deno/unstable/~/WebSocketStream
 [xn]: https://deno.com/deploy/docs/runtime-api#future-support
 [xo]: https://caniuse.com/mdn-api_compressionstream
+[xp]: https://js-compute-reference-docs.edgecompute.app/interfaces/console.html
 
 
 ### Working Drafts
 The APIs below are either abandoned or do not have buy-in from major browser vendors. However, they can still be reasonable targets for 3rd party libraries, such as KV stores or cookie middleware.
 
-|                         | Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Fastly <small>Compute@Edge</small> | Miniflare | cfworker/dev | cloudflare-<br/>worker-local |
+|                         | Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Fastly C@E | Miniflare | cfworker/dev | cloudflare-<br/>worker-local |
 |:------------------------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | [KV Storage API][kva]   | [👨‍💻][w1] | [👨‍💻][w2] | [👨‍💻][w6] | [👨‍💻][w6] |  🚫      | [👨‍💻][w2] | [👨‍💻][w6] | [👨‍💻][w2] |
 | [Cookie Store API][csa] | [ℹ️][w3] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] |
@@ -187,7 +188,7 @@ The APIs below are either abandoned or do not have buy-in from major browser ven
 ### Non-Standard APIs
 These are useful APIs provided by one or more Worker Environment that aren't on any standards track (including abandoned). 
 
-|                             | Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Fastly <small>Compute@Edge</small> | Miniflare | cfworker/dev | cloudflare-<br/>worker-local |
+|                             | Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Fastly C@E | Miniflare | cfworker/dev | cloudflare-<br/>worker-local |
 |:----------------------------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | [`scheduled` event][u1]     |  🚫      |  ✅      |  🚫      |  🚫      | 🚫 |  ✅      | 🚫 |  🚫      |
 | [HTMLRewriter][u2]          | [👨‍💻][u7] |  ✅      | [👨‍💻][u7] | [👨‍💻][u7] | 🚫 | [ℹ️][u8] | ✅ | [👨‍💻][u7] |
@@ -200,13 +201,12 @@ These are useful APIs provided by one or more Worker Environment that aren't on 
 ### General Capabilities, Non-Standard
 These are some general capabilities provided by one or more Worker Environment that share similarities but aren't tied to a specific API.
 
-|                             | Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Fastly <small>Compute@Edge</small> | Miniflare | cfworker/dev | cloudflare-<br/>worker-local |
+|                             | Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Fastly C@E | Miniflare | cfworker/dev | cloudflare-<br/>worker-local |
 |:----------------------------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | File system access          |  🚫      |  🚫      |  ✅      | [ℹ️][uf] | 🚫       |  🚫      | 🚫 |  🚫      |
 | Connect TCP                 |  🚫      | [🔜][ua] | [✅][ub] | [✅][uc] | 🚫       | [🔜][ua] | 🚫 |  🚫      |
 | Connect UDP                 |  🚫      | [🔜][ua] | [🔜][ud] | [🔜][ud] | 🚫       | [🔜][ua] | 🚫 |  🚫      |
 | WebSockets (Server)         |  🚫      | [✅][uh] | [✅][ui] | [✅][ui] | 🚫       | [✅][uh] | 🚫 |  🚫      |
-| Builtin KV<br/>(any API)    |  ✅  ️    |  ✅      |  ✅      |  🚫      | [✅][uj] |  ✅      | ✅ | [ℹ️][u6] |
  
 
 [u1]: https://developers.cloudflare.com/workers/runtime-apis/scheduled-event
