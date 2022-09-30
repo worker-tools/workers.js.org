@@ -65,7 +65,7 @@ There are currently two production quality Worker Runtimes. There are multiple o
 |                         | [Service Workers][sw] | [Cloudflare Workers][cw] | [Deno CLI][dl] | [Deno Deploy][dd] | [Fastly <small>Compute@Edge</small>][fst] | [Miniflare][mfl] | [cfworker/dev][cdv] | [cloudflare-<br/>worker-local][wlc] |
 |:------------------------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | Domain                  | Client                | Edge                     | Server         | Edge              | Edge                                      | Testing, Dev     | Testing, Dev        | Testing, Dev                        |
-| Open Source             | ✅ | [🔜][c3] | ✅ | [ℹ️][dd] | 🚫 | ✅ | ✅ | ✅ |
+| Open Source             | ✅ | [🔜][c3] | ✅ | [ℹ️][dd] | ✅ | ✅ | ✅ | ✅ |
 | 1.0                     | ✅ | ✅       | ✅ |  ✅      | ✅ | ✅ | ✅ | ✅ |
 
 [c1]: https://github.com/dollarshaveclub/cloudworker#%EF%B8%8F-cloudworker-is-no-longer-actively-maintained-at-dollar-shave-club-if-youre-interested-in-volunteering-to-help-please-open-an-issue-%EF%B8%8F
