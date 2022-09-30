@@ -116,7 +116,7 @@ Implementations of other browser APIs are necessary for bridging the gap between
 | Encoding API            |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |
 | Streams API             | [ℹ️][x2] | [ℹ️][x4] |  ✅      |  ✅      |  ✅      | [ℹ️][x4] |  ℹ️      |  🚫      |
 | Encoding Streams        | [ℹ️][x0] |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |  🚫      |  🚫      | 
-| Compression Streams     | [ℹ️][xo] |  ✅      |  ✅      |  🚫      |  🚫      |  ✅      |  🚫      |  🚫      |
+| Compression Streams     | [ℹ️][xo] |  ✅      |  ✅      |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |
 | Web Cryptography API    |  ✅      |  ✅      |  ✅      |  ✅      |  ℹ️      |  ✅      |  ✅      |  ✅      |
 | `crypto.randomUUID()`   | [ℹ️][xg] |  ✅      |  ✅      |  ✅      |  🚫      |  ✅      |  ❓      |  ❓      |
 | Cache API               |  ✅      | [ℹ️][xa] |  ❓      | [🔜][xn] |  🚫      | [ℹ️][xd] |  ✅      |  ℹ️      |
