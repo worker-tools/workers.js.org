@@ -62,11 +62,11 @@ There are currently two production quality Worker Runtimes. There are multiple o
 
 <br/>
 
-|                         | [Service Workers][sw] | [Cloudflare Workers][cw] | [Deno CLI][dl] | [Deno Deploy][dd] | [Fastly <small>Compute@Edge</small>][fst] | [Miniflare][mfl] | [cfworker/dev][cdv] | [cloudflare-<br/>worker-local][wlc] |
-|:------------------------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| Domain                  | Client                | Edge                     | Server         | Edge              | Edge                                      | Testing, Dev     | Testing, Dev        | Testing, Dev                        |
-| Open Source             | ✅ | ✅ | ✅ | [ℹ️][dd] | ✅ | ✅ | ✅ | ✅ |
-| 1.0                     | ✅ | ✅ | ✅ |  ✅      | ✅ | ✅ | ✅ | ✅ |
+|                         | [Service Workers][sw] | [Cloudflare Workers][cw] | [Deno CLI][dl] | [Deno Deploy][dd] | [Fastly <small>Compute@Edge</small>][fst] | [Miniflare][mfl] | [cfworker/dev][cdv] | [cloudflare-<br/>worker-local][wlc] | [Lagon][lg] |
+|:------------------------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| Domain                  | Client                | Edge                     | Server         | Edge              | Edge                                      | Testing, Dev     | Testing, Dev        | Testing, Dev                        | Edge, Dev |
+| Open Source             | ✅ | ✅ | ✅ | [ℹ️][dd] | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 1.0                     | ✅ | ✅ | ✅ |  ✅      | ✅ | ✅ | ✅ | ✅ | 🚫 |
 
 [c1]: https://github.com/dollarshaveclub/cloudworker#%EF%B8%8F-cloudworker-is-no-longer-actively-maintained-at-dollar-shave-club-if-youre-interested-in-volunteering-to-help-please-open-an-issue-%EF%B8%8F
 [c2]: https://deno.com/deploy
@@ -106,34 +106,34 @@ There are currently two production quality Worker Runtimes. There are multiple o
 The center piece of any Worker Environment is an implementation of the global `fetch` event. 
 Implementations of other browser APIs are necessary for bridging the gap between different worker runtimes.
 
-|| Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Fastly C@E | Miniflare | cfworker/dev | cloudflare-<br/>worker-local |
-|:------------------------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| `fetch` event           |  ✅      | [🔙][xi] | [👨‍💻][xb] |  🚫      |  ✅      |  ✅      |  ✅      |  ✅      |
-| URL API                 |  ✅      | [ℹ️][x5] |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |
-| Fetch API               |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |
-| Abort Controller/Signal |  ✅      |  ✅      |  ✅      |  ✅      |  ❓      |  ✅      | [👨‍💻][x1] | [👨‍💻][x1] |
-| URL Pattern API         | [ℹ️][xf] |  ✅      |  ✅      |  ✅      |  🚫      |  ✅      | [👨‍💻][xh] | [👨‍💻][xh] |
-| Encoding API            |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |
-| Streams API             | [ℹ️][x2] | [ℹ️][x4] |  ✅      |  ✅      |  ✅      | [ℹ️][x4] |  ℹ️      |  🚫      |
-| Encoding Streams        | [ℹ️][x0] |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |  🚫      |  🚫      | 
-| Compression Streams     | [ℹ️][xo] |  ✅      |  ✅      |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |
-| Web Cryptography API    |  ✅      |  ✅      |  ✅      |  ✅      |  ℹ️      |  ✅      |  ✅      |  ✅      |
-| `crypto.randomUUID()`   | [ℹ️][xg] |  ✅      |  ✅      |  ✅      |  🚫      |  ✅      |  ❓      |  ❓      |
-| Cache API               |  ✅      | [ℹ️][xa] |  ❓      | [🔜][xn] |  🚫      | [ℹ️][xd] |  ✅      |  ℹ️      |
-| WebSocket API           |  ✅      | [ℹ️][xc] |  ✅      |  ✅      |  🚫      | [ℹ️][xe] |  🚫      |  🚫      |
-| [Web Socket Stream][wss]|  ❓      |  ❓      | [🔜][xm] | [🔜][xm] |  🚫      |  ❓      |  🚫      |  🚫      |
-| Location API            |  ✅      | [👨‍💻][x9]️ |  ✅      |  🚫      |  ✅      | [👨‍💻][x9]️ | [👨‍💻][x9] | [👨‍💻][x9] |
-| `console`               |  ✅      |  ✅      |  ✅      |  ✅      | [ℹ️][xp] |  ✅      |  ✅      |  ✅      |
-| `queueMicrotask`        |  ℹ️      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ❓      |  ❓      |
-| `structuredClone`       |  ℹ️      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ❓      |  ❓      | 
-| `navigator.userAgent`   |  ✅      |  ✅      |  ✅      |  ✅      |  🚫      |  ✅      |  ❓      |  ❓      | 
-| `Response.json`         |  ℹ️      |  ✅      |  ✅      |  ✅      |  🚫      |  ✅      |  ❓      |  ❓      | 
-| EventTarget and Event   |  ✅      |  ✅      |  ✅      |  ✅      |  ❓      |  ✅      |  ❓      |  ❓      |
-| Web Workers API         |  ✅      |  🚫      |  ✅      |  🚫      |  🚫      |  🚫      |  ❓      |  ❓      |
-| Message Channel         |  ✅      |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |  🚫      |  🚫      |
-| Broadcast Channel       | [ℹ️][xj] |  🚫      | [🔜][xl] | [ℹ️][xk] |  🚫      |  🚫      |  🚫      |  🚫      |
-| IndexedDB               |  ✅      |  🚫      | [❓][x3] | [❓][x3] |  🚫      |  🚫      |  🚫      |  🚫      |
-| Performance API         |  ✅      |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |  ❓      |  ❓      |
+|| Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Fastly C@E | Miniflare | cfworker/dev | cloudflare-<br/>worker-local | Lagon |
+|:------------------------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| `fetch` event           |  ✅      | [🔙][xi] | [👨‍💻][xb] |  🚫      |  ✅      |  ✅      |  ✅      |  ✅      |  🚫      |
+| URL API                 |  ✅      | [ℹ️][x5] |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |
+| Fetch API               |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |
+| Abort Controller/Signal |  ✅      |  ✅      |  ✅      |  ✅      |  ❓      |  ✅      | [👨‍💻][x1] | [👨‍💻][x1] |  ✅      |
+| URL Pattern API         | [ℹ️][xf] |  ✅      |  ✅      |  ✅      |  🚫      |  ✅      | [👨‍💻][xh] | [👨‍💻][xh] |  ✅      |
+| Encoding API            |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |
+| Streams API             | [ℹ️][x2] | [ℹ️][x4] |  ✅      |  ✅      |  ✅      | [ℹ️][x4] |  ℹ️      |  🚫      |  ✅      |
+| Encoding Streams        | [ℹ️][x0] |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |  🚫      |  🚫      |  🔜      |
+| Compression Streams     | [ℹ️][xo] |  ✅      |  ✅      |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |  🔜      |
+| Web Cryptography API    |  ✅      |  ✅      |  ✅      |  ✅      |  ℹ️      |  ✅      |  ✅      |  ✅      |  ✅      |
+| `crypto.randomUUID()`   | [ℹ️][xg] |  ✅      |  ✅      |  ✅      |  🚫      |  ✅      |  ❓      |  ❓      |  ✅      |
+| Cache API               |  ✅      | [ℹ️][xa] |  ❓      | [🔜][xn] |  🚫      | [ℹ️][xd] |  ✅      |  ℹ️      |  🔜      |
+| WebSocket API           |  ✅      | [ℹ️][xc] |  ✅      |  ✅      |  🚫      | [ℹ️][xe] |  🚫      |  🚫      |  🔜      |
+| [Web Socket Stream][wss]|  ❓      |  ❓      | [🔜][xm] | [🔜][xm] |  🚫      |  ❓      |  🚫      |  🚫      |  🔜      |
+| Location API            |  ✅      | [👨‍💻][x9]️ |  ✅      |  🚫      |  ✅      | [👨‍💻][x9]️ | [👨‍💻][x9] | [👨‍💻][x9] |  🚫      |
+| `console`               |  ✅      |  ✅      |  ✅      |  ✅      | [ℹ️][xp] |  ✅      |  ✅      |  ✅      |  ✅      |
+| `queueMicrotask`        |  ℹ️      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ❓      |  ❓      |  ✅      |
+| `structuredClone`       |  ℹ️      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ❓      |  ❓      |  🚫      |
+| `navigator.userAgent`   |  ✅      |  ✅      |  ✅      |  ✅      |  🚫      |  ✅      |  ❓      |  ❓      |  ✅      |
+| `Response.json`         |  ℹ️      |  ✅      |  ✅      |  ✅      |  🚫      |  ✅      |  ❓      |  ❓      |  ✅      |
+| EventTarget and Event   |  ✅      |  ✅      |  ✅      |  ✅      |  ❓      |  ✅      |  ❓      |  ❓      |  ✅      |
+| Web Workers API         |  ✅      |  🚫      |  ✅      |  🚫      |  🚫      |  🚫      |  ❓      |  ❓      |  🚫      |
+| Message Channel         |  ✅      |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |  🚫      |  🚫      |  🚫      |
+| Broadcast Channel       | [ℹ️][xj] |  🚫      | [🔜][xl] | [ℹ️][xk] |  🚫      |  🚫      |  🚫      |  🚫      |  🔜      |
+| IndexedDB               |  ✅      |  🚫      | [❓][x3] | [❓][x3] |  🚫      |  🚫      |  🚫      |  🚫      |  🚫      |
+| Performance API         |  ✅      |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |  ❓      |  ❓      |  🔜      |
 {:.sticky-table}
 
 [wss]: https://web.dev/websocketstream/
@@ -169,10 +169,10 @@ Implementations of other browser APIs are necessary for bridging the gap between
 ### Working Drafts
 The APIs below are either abandoned or do not have buy-in from major browser vendors. However, they can still be reasonable targets for 3rd party libraries, such as KV stores or cookie middleware.
 
-|                         | Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Fastly C@E | Miniflare | cfworker/dev | cloudflare-<br/>worker-local |
-|:------------------------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| [KV Storage API][kva]   | [👨‍💻][w1] | [👨‍💻][w2] | [👨‍💻][w6] | [👨‍💻][w6] |  🚫      | [👨‍💻][w2] | [👨‍💻][w6] | [👨‍💻][w2] |
-| [Cookie Store API][csa] | [ℹ️][w3] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] |
+|                         | Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Fastly C@E | Miniflare | cfworker/dev | cloudflare-<br/>worker-local | Lagon |
+|:------------------------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| [KV Storage API][kva]   | [👨‍💻][w1] | [👨‍💻][w2] | [👨‍💻][w6] | [👨‍💻][w6] |  🚫      | [👨‍💻][w2] | [👨‍💻][w6] | [👨‍💻][w2] | 🚫 |
+| [Cookie Store API][csa] | [ℹ️][w3] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] | [👨‍💻][w4] | 🚫 |
 
 [kva]: https://github.com/WICG/kv-storage
 [csa]: https://developer.mozilla.org/en-US/docs/Web/API/Cookie_Store_API
@@ -188,25 +188,25 @@ The APIs below are either abandoned or do not have buy-in from major browser ven
 ### Non-Standard APIs
 These are useful APIs provided by one or more Worker Environment that aren't on any standards track (including abandoned). 
 
-|                             | Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Fastly C@E | Miniflare | cfworker/dev | cloudflare-<br/>worker-local |
-|:----------------------------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| [`scheduled` event][u1]     |  🚫      |  ✅      |  🚫      |  🚫      | 🚫 |  ✅      | 🚫 |  🚫      |
-| [HTMLRewriter][u2]          | [👨‍💻][u7] |  ✅      | [👨‍💻][u7] | [👨‍💻][u7] | 🚫 | [ℹ️][u8] | ✅ | [👨‍💻][u7] |
-| [KV][u3]                    |  🚫      |  ✅      |  🚫      |  🚫      | 🚫 |  ✅      | ✅ | [ℹ️][u6] |
-| [Durable Objects][u4]       |  🚫      |  ✅      |  🚫      |  🚫      | 🚫 |  ✅      | 🚫 |  🚫      |
-| [`crypto.DigestStream`][u9] |  🚫      |  ✅      |  🚫      |  🚫      | 🚫 |  ✅      | 🚫 |  🚫      |
-| [Ed25519 via WebCrypto][ue] |  🚫      |  ✅      |  🚫      |  🚫      | 🚫 |  ✅      | 🚫 |  🚫      |
+|                             | Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Fastly C@E | Miniflare | cfworker/dev | cloudflare-<br/>worker-local | Lagon |
+|:----------------------------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| [`scheduled` event][u1]     |  🚫      |  ✅      |  🚫      |  🚫      | 🚫 |  ✅      | 🚫 |  🚫      |  🚫      |
+| [HTMLRewriter][u2]          | [👨‍💻][u7] |  ✅      | [👨‍💻][u7] | [👨‍💻][u7] | 🚫 | [ℹ️][u8] | ✅ | [👨‍💻][u7] |  🚫      |
+| [KV][u3]                    |  🚫      |  ✅      |  🚫      |  🚫      | 🚫 |  ✅      | ✅ | [ℹ️][u6] |  👨‍💻      |
+| [Durable Objects][u4]       |  🚫      |  ✅      |  🚫      |  🚫      | 🚫 |  ✅      | 🚫 |  🚫      |  🚫      |
+| [`crypto.DigestStream`][u9] |  🚫      |  ✅      |  🚫      |  🚫      | 🚫 |  ✅      | 🚫 |  🚫      |  🚫      |
+| [Ed25519 via WebCrypto][ue] |  🚫      |  ✅      |  🚫      |  🚫      | 🚫 |  ✅      | 🚫 |  🚫      |  🚫      |
 
 
 ### General Capabilities, Non-Standard
 These are some general capabilities provided by one or more Worker Environment that share similarities but aren't tied to a specific API.
 
-|                             | Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Fastly C@E | Miniflare | cfworker/dev | cloudflare-<br/>worker-local |
-|:----------------------------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| File system access          |  🚫      |  🚫      |  ✅      | [ℹ️][uf] | 🚫       |  🚫      | 🚫 |  🚫      |
-| Connect TCP                 |  🚫      | [🔜][ua] | [✅][ub] | [✅][uc] | 🚫       | [🔜][ua] | 🚫 |  🚫      |
-| Connect UDP                 |  🚫      | [🔜][ua] | [🔜][ud] | [🔜][ud] | 🚫       | [🔜][ua] | 🚫 |  🚫      |
-| WebSockets (Server)         |  🚫      | [✅][uh] | [✅][ui] | [✅][ui] | 🚫       | [✅][uh] | 🚫 |  🚫      |
+|                             | Service Workers | Cloudflare Workers | Deno CLI | Deno Deploy | Fastly C@E | Miniflare | cfworker/dev | cloudflare-<br/>worker-local | Lagon |
+|:----------------------------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| File system access          |  🚫      |  🚫      |  ✅      | [ℹ️][uf] | 🚫       |  🚫      | 🚫 |  🚫      |  🚫      |
+| Connect TCP                 |  🚫      | [🔜][ua] | [✅][ub] | [✅][uc] | 🚫       | [🔜][ua] | 🚫 |  🚫      |  🔜      |
+| Connect UDP                 |  🚫      | [🔜][ua] | [🔜][ud] | [🔜][ud] | 🚫       | [🔜][ua] | 🚫 |  🚫      |  🔜      |
+| WebSockets (Server)         |  🚫      | [✅][uh] | [✅][ui] | [✅][ui] | 🚫       | [✅][uh] | 🚫 |  🚫      |  🔜      |
  
 
 [u1]: https://developers.cloudflare.com/workers/runtime-apis/scheduled-event
@@ -264,6 +264,7 @@ Are you aware of any other Worker Runtimes available or in development? Did you 
 [cdv]: https://github.com/cfworker/cfworker/tree/main/packages/dev
 [fst]: https://www.fastly.com/products/edge-compute
 [xxx]: https://developer.fastly.com/learning/compute/javascript/
+[lg]: https://github.com/lagonapp/lagon
 
 <br/>
 <style>
