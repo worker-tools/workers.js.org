@@ -111,14 +111,14 @@ Implementations of other browser APIs are necessary for bridging the gap between
 | `fetch` event           |  ✅      | [🔙][xi] | [👨‍💻][xb] |  🚫      |  ✅      |  ✅      |  ✅      |  ✅      |
 | URL API                 |  ✅      | [ℹ️][x5] |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |
 | Fetch API               |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |
-| Abort Controller/Signal |  ✅      |  ✅      |  ✅      |  ✅      |  ❓      |  ✅      | [👨‍💻][x1] | [👨‍💻][x1] |
+| Abort Controller/Signal |  ✅      |  ✅      |  ✅      |  ✅      |  🚫      |  ✅      | [👨‍💻][x1] | [👨‍💻][x1] |
 | URL Pattern API         | [ℹ️][xf] |  ✅      |  ✅      |  ✅      |  🚫      |  ✅      | [👨‍💻][xh] | [👨‍💻][xh] |
 | Encoding API            |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |
 | Streams API             | [ℹ️][x2] | [ℹ️][x4] |  ✅      |  ✅      |  ✅      | [ℹ️][x4] |  ℹ️      |  🚫      |
 | Encoding Streams        | [ℹ️][x0] |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |  🚫      |  🚫      | 
 | Compression Streams     | [ℹ️][xo] |  ✅      |  ✅      |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |
 | Web Cryptography API    |  ✅      |  ✅      |  ✅      |  ✅      |  ℹ️      |  ✅      |  ✅      |  ✅      |
-| `crypto.randomUUID()`   | [ℹ️][xg] |  ✅      |  ✅      |  ✅      |  🚫      |  ✅      |  ❓      |  ❓      |
+| `crypto.randomUUID()`   | [ℹ️][xg] |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ❓      |  ❓      |
 | Cache API               |  ✅      | [ℹ️][xa] |  ❓      | [🔜][xn] |  🚫      | [ℹ️][xd] |  ✅      |  ℹ️      |
 | WebSocket API           |  ✅      | [ℹ️][xc] |  ✅      |  ✅      |  🚫      | [ℹ️][xe] |  🚫      |  🚫      |
 | [Web Socket Stream][wss]|  ❓      |  ❓      | [🔜][xm] | [🔜][xm] |  🚫      |  ❓      |  🚫      |  🚫      |
@@ -127,13 +127,13 @@ Implementations of other browser APIs are necessary for bridging the gap between
 | `queueMicrotask`        |  ℹ️      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ❓      |  ❓      |
 | `structuredClone`       |  ℹ️      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ❓      |  ❓      | 
 | `navigator.userAgent`   |  ✅      |  ✅      |  ✅      |  ✅      |  🚫      |  ✅      |  ❓      |  ❓      | 
-| `Response.json`         |  ℹ️      |  ✅      |  ✅      |  ✅      |  🚫      |  ✅      |  ❓      |  ❓      | 
+| `Response.json`         |  ℹ️      |  ✅      |  ✅      |  ✅      |  ✅      |  ✅      |  ❓      |  ❓      | 
 | EventTarget and Event   |  ✅      |  ✅      |  ✅      |  ✅      |  ❓      |  ✅      |  ❓      |  ❓      |
 | Web Workers API         |  ✅      |  🚫      |  ✅      |  🚫      |  🚫      |  🚫      |  ❓      |  ❓      |
 | Message Channel         |  ✅      |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |  🚫      |  🚫      |
 | Broadcast Channel       | [ℹ️][xj] |  🚫      | [🔜][xl] | [ℹ️][xk] |  🚫      |  🚫      |  🚫      |  🚫      |
 | IndexedDB               |  ✅      |  🚫      | [❓][x3] | [❓][x3] |  🚫      |  🚫      |  🚫      |  🚫      |
-| Performance API         |  ✅      |  🚫      |  ✅      |  ✅      |  🚫      |  🚫      |  ❓      |  ❓      |
+| Performance API         |  ✅      |  🚫      |  ✅      |  ✅      |  ✅      |  🚫      |  ❓      |  ❓      |
 {:.sticky-table}
 
 [wss]: https://web.dev/websocketstream/
